@@ -1,0 +1,6 @@
+[submodule "libreav"]
+	path = libreav
+	url = https://zjac078:glpat-m5n_Qxvn3BVEStbdE5-G@gitlab.cim.rhul.ac.uk/zjac078/libreav
+[submodule "Hypatia"]
+	path = Hypatia
+	url = https://zjac078:glpat-m5n_Qxvn3BVEStbdE5-G@gitlab.cim.rhul.ac.uk/zjac078/Hypatia
