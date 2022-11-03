@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PermissionPOC</string>
     <string name="app_icon">App Icon</string>
+    <string name="appIcon">App Icon</string>
+    <string name="permission_list">Permissions List</string>
+    <string name="openInSettings">Open In Settings</string>
 </resources>
