@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     RecyclerView appCardList;
     RecyclerView.LayoutManager layout;
-    ListAdapter adapter;
+    AppAdapter adapter;
     public static ArrayList<AppParcelInfo> apps;
 
     @Override
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         layout = new LinearLayoutManager(this);
         appCardList.setLayoutManager(layout);
 
-        adapter = new ListAdapter(this, apps);
+        adapter = new AppAdapter(this, apps);
         appCardList.setAdapter(adapter);
 
     }

@@ -20,7 +20,7 @@ public class ListAdapter extends RecyclerView.Adapter {
     private final List<ApplicationInfo> apps;
     private final PackageManager packageManager;
 
-    public ListAdapter(Context context, ArrayList<ApplicationInfo> listOfApps) {
+    public ListAdapter(Context context, List<ApplicationInfo> listOfApps) {
         packageManager = context.getPackageManager();
         apps = listOfApps;
         this.context = context;
