@@ -4,9 +4,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.Image;
+import android.net.Uri;
 import android.net.wifi.ScanResult;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,6 +31,8 @@ public class AppDetails extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<String> arrayList;
 
+    Button settings;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,7 @@ public class AppDetails extends AppCompatActivity {
         pName = findViewById(R.id.app_package);
         icon = findViewById(R.id.app_icon);
         name = findViewById(R.id.app_name);
+        settings = findViewById(R.id.openInSettingsButton);
 
         recyclerView = findViewById(R.id.permission_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -54,20 +61,21 @@ public class AppDetails extends AppCompatActivity {
         packageName = intent.getExtras().getString("packageName");
         pName.setText(packageName);
 
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openSettings = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                Uri uri = Uri.fromParts("package", packageName, null);
+                openSettings.setData(uri);
+                startActivity(openSettings);
+            }
+        });
+
         PackageManager packageManager = AppDetails.this.getPackageManager();
         try {
             icon.setImageDrawable(packageManager.getPackageInfo(packageName, 0).applicationInfo.loadIcon(packageManager));
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-        }
-    }
-
-    private boolean isPackageInstalled(String packageName, PackageManager packageManager){
-        try{
-            packageManager.getPackageInfo(packageName, 0);
-            return true;
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
         }
     }
 
