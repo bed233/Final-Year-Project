@@ -3,36 +3,42 @@ package com.rhul.fyp.permissionpoc;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.view.MenuItem;
-
-import java.util.ArrayList;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView appCardList;
-    RecyclerView.LayoutManager layout;
-    AppAdapter adapter;
-    public static ArrayList<AppParcelInfo> apps;
+    Button scanButton;
+    TextView lastScanText;
+    private final Context context = this;
+    SharedPreferences sharedPreferences;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        setContentView(R.layout.permissions_result);
-        appCardList = findViewById(R.id.resultList);
+        lastScanText = findViewById(R.id.lastScan);
+//        String lastScan = sharedPreferences.getString("LastScan", "Never");
+        String lastScan = "Never";
+        lastScanText.setText("Last Scan:" + " " + lastScan);
 
-        layout = new LinearLayoutManager(this);
-        appCardList.setLayoutManager(layout);
+        scanButton = findViewById(R.id.scanButton);
+        PermissionsScanner scan = new PermissionsScanner(this, MainActivity.this);
+        scanButton.setOnClickListener(new View.OnClickListener(){
 
-        adapter = new AppAdapter(this, apps);
-        appCardList.setAdapter(adapter);
-
+            @Override
+            public void onClick(View v) {
+                scan.execute();
+            }
+        });
     }
 
     @Override
@@ -41,13 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -56,16 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    protected void onResume() {
+        super.onResume();
     }
 }
