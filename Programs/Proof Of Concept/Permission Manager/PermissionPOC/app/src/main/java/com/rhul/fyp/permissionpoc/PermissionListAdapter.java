@@ -49,7 +49,7 @@ public class PermissionListAdapter extends RecyclerView.Adapter<PermissionListAd
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.name=itemView.findViewById(R.id.appName);
+            this.name=itemView.findViewById(R.id.name);
         }
     }
 
