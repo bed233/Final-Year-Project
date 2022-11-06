@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter {
@@ -49,7 +48,7 @@ public class ListAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.app_card_list,
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.app_list_card,
                 parent, false);
         return new ListAdapter.ViewHolder(view);
     }

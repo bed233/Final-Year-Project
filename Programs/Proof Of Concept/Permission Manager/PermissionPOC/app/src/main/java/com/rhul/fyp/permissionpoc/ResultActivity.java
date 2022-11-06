@@ -24,7 +24,7 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.permissions_result);
+        setContentView(R.layout.apps_list);
         appCardList = findViewById(R.id.resultList);
 
         layout = new LinearLayoutManager(this);

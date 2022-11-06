@@ -1,9 +1,6 @@
 package com.rhul.fyp.permissionpoc;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.PermissionInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +23,7 @@ public class PermissionListAdapter extends RecyclerView.Adapter<PermissionListAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.app_card_list, parent,
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.permission_list_result, parent,
                 false);
         return new ViewHolder(itemView);
     }
