@@ -62,6 +62,6 @@ public class ListAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return apps.size();
     }
 }
