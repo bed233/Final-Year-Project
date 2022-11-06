@@ -16,7 +16,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class AppAdapter extends RecyclerView.Adapter {
-    int pos;
     Context context;
     private ArrayList<AppParcelInfo> apps;
     private WeakReference<Context> contextWeakReference;
@@ -65,11 +64,13 @@ public class AppAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        AppAdapter.ViewHolder viewHolder = (AppAdapter.ViewHolder) holder;
+        viewHolder.setAppInfo(apps.get(position));
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return apps.size();
     }
 }
