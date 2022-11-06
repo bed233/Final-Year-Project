@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.Image;
+import android.net.wifi.ScanResult;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.ImageView;
@@ -22,6 +23,7 @@ public class AppDetails extends AppCompatActivity {
     TextView name;
     TextView listOfPermissions;
     TextView pName;
+    PermissionListAdapter permissionsList;
     RecyclerView recyclerView;
     ArrayList<String> arrayList;
 
@@ -41,6 +43,12 @@ public class AppDetails extends AppCompatActivity {
         Intent intent = getIntent();
 
         arrayList = intent.getStringArrayListExtra("permissionList");
+        permissionsList = new PermissionListAdapter(this, arrayList);
+        if (arrayList == null){
+            listOfPermissions.setText("Is Empty");
+        }
+        recyclerView.setAdapter(permissionsList);
+
         name.setText(intent.getExtras().getString("appName"));
 
         packageName = intent.getExtras().getString("packageName");
