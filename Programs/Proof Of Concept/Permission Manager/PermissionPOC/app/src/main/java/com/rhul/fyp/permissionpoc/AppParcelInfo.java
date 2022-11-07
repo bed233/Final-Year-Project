@@ -61,30 +61,7 @@ public class AppParcelInfo implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    /**
-     * Loads the App Icon of the particular app using the package manager
-     * @param context - Allows the method to access context which is a interface to global
-     *                information about the environment the app is working in. In this case what
-     *                apps are installed.
-     * @return - Return The Icon of a particular app or return null if there is an error.
-     */
-    public Drawable loadIcon(Context context) {
-        try {
-            return context.getPackageManager().getPackageArchiveInfo(path, 0).applicationInfo.loadIcon(context.getPackageManager());
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-//    public static Comparator<AppParcelInfo> appParcelInfoComparator = new Comparator<AppParcelInfo>() {
-//        @Override
-//        public int compare(AppParcelInfo appParcelInfo, AppParcelInfo t1) {
-//            return appParcelInfo.name.toLowerCase().compareTo(t1.name.toLowerCase());
-//        }
-//    };
-
+    
     /**
      * Required Interface for when using Parcelable and Parcels that allows instances of my
      * Parcelable class (AppParcelInfo) to be created from Parcel.

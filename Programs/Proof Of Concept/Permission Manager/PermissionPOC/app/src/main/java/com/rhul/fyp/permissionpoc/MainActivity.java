@@ -14,21 +14,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Button scanButton;
-    TextView lastScanText;
-    private final Context context = this;
-    SharedPreferences sharedPreferences;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lastScanText = findViewById(R.id.lastScan);
-//        String lastScan = sharedPreferences.getString("LastScan", "Never");
-        String lastScan = "Never";
-        lastScanText.setText("Last Scan:" + " " + lastScan);
 
         scanButton = findViewById(R.id.scanButton);
         PermissionsScanner scan = new PermissionsScanner(this, MainActivity.this);

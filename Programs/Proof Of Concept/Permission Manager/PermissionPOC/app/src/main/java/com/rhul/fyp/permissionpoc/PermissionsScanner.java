@@ -29,11 +29,6 @@ public class PermissionsScanner extends AsyncTask<Void, String, Void> {
 
     private final ArrayList<AppParcelInfo> scannedApps = new ArrayList<>();
 
-    private int installedAppsCount;
-    private int status = 0;
-
-    private boolean withSysApps;
-
     public PermissionsScanner(Context context, Activity activity) {
         contextRef = new WeakReference<Context>(context);
         this.activityRef = new WeakReference<>(activity);
