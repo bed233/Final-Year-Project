@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AppLockPOC</string>
+    <string name="powered_by">Powered By</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="android">Android</string>
+    <string name="app_locker">App Locker</string>
 </resources>
