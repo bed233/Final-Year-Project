@@ -55,3 +55,21 @@ Have finally completed my Proof of Concept for App Permissions. This POC has tak
 
 ## 07/11/2022
 Realised a mistake when sorting out my Resource files for my App Permissions in order to allow the app to work on Android 5 Devices. Have researched into ways I could implement App Access Control. As there is no direct way to listen to when an app open or closes so, from what i can tell, is to use a Usage Stats Manager to get the app that is at the top of the launcher which is most likely to be the app that the user has just opened. 
+
+## 16/11/2022
+Have begun writing my background theory (which features I could implement in my Security Suite) and have made good progress on this report. Have looked into possible implementations and have begun programming my POC for App lock. This will most likely be my final POC of this term as I focus more on my report and my Demo and Presentation.
+
+## 17/11/2022
+Made progress on my 3rd Proof of Concept, is taking a longer than expected as I didnt anticipate how different usage stats worked between different versions of android. I am now considering looking at using an Open Source project to fulfill my app access control.
+
+## 18/11/2022
+I have found potential candidates that I could use for app acccess control from github and just going through their feature set and evaluating their suitability as well as ensuring there are no licensing issues with the rest of my project.
+
+## 19/11/2022
+Have settled on an Open Source Implementation of App access control that I will be using as part of my Proof of Concepts. 
+
+## 20/11/2022
+Completed my early delvierable report for my interim report and have begun looking for an open-source implementation/ way I could implement an app that alerts the user when any service on their device is using mic or camera (Active Sensor Usage). Have multiple section of my report left to write and am trying to get as much completed before draft look with my supervisor.
+
+## 21/11/2022
+Made more progress on my FYP interim report. Have begun and completed around half of my 2nd Section (Technical Achievements). Have questions about the report which I shall ask to my supervisor in Our meeting on Wednesday. Will get the demo of the Permission manager ready in order to show my supervisor in the same meeting.
