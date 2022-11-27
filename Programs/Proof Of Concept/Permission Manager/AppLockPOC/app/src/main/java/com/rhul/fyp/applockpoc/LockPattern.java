@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.andrognito.patternlockview.PatternLockView;
 import com.andrognito.patternlockview.listener.PatternLockViewListener;
 import com.andrognito.patternlockview.utils.PatternLockUtils;
-import com.rhul.fyp.applockpoc.model.pattern;
+import com.rhul.fyp.applockpoc.model.Pattern;
 import com.shuhart.stepview.StepView;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class LockPattern extends AppCompatActivity {
     StepView stepView;
     LinearLayout linearLayout;
     RelativeLayout relativeLayout;
-    pattern patternState;
+    Pattern patternState;
     String userPattern;
     TextView currentState;
 
@@ -35,7 +35,7 @@ public class LockPattern extends AppCompatActivity {
         stepView = findViewById(R.id.stepView);
         linearLayout = findViewById(R.id.topBar);
         relativeLayout = findViewById(R.id.main_lock_pattern_layout);
-        patternState = new pattern(this);
+        patternState = new Pattern(this);
         currentState = findViewById(R.id.currentState);
         currentState.setText(patternState.firstPatternInput);
         if (patternState.getPatternKey() == null) {

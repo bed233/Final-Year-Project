@@ -4,3 +4,7 @@
 [submodule "Hypatia"]
 	path = Hypatia
 	url = https://zjac078:glpat-m5n_Qxvn3BVEStbdE5-G@gitlab.cim.rhul.ac.uk/zjac078/Hypatia
+[submodule "MaxLock"]
+	path = MaxLock
+	url = https://zjac078:glpat-m5n_Qxvn3BVEStbdE5-G@gitlab.cim.rhul.ac.uk/zjac078/MaxLock
+

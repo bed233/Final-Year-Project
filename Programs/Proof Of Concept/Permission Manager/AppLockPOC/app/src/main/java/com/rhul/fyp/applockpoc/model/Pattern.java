@@ -4,7 +4,7 @@ import android.content.Context;
 
 import io.paperdb.Paper;
 
-public class pattern {
+public class Pattern {
     private String patternKey = "Pattern Key";
     public String patternSet = "Pattern Set";
     public String confirmPattern = "Draw the Pattern again to confirm";
@@ -33,7 +33,7 @@ public class pattern {
         return pattern.equals(getPatternKey());
     }
 
-    public pattern(Context context){
+    public Pattern(Context context){
         Paper.init(context);
 
     }
