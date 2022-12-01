@@ -47,13 +47,11 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigMain
         }
         getByName("debug") {
             isDebuggable = true
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules-debug.pro")
-            signingConfig = signingConfigMain
             versionNameSuffix = "-beta"
         }
     }
@@ -103,8 +101,8 @@ dependencies {
     implementation("${Config.Deps.splittiesBase}:splitties-dimensions:${Config.Deps.splittiesVersion}")
     implementation("com.twofortyfouram:android-plugin-api-for-locale:1.0.2")
     implementation("commons-io:commons-io:2.6")
-    implementation("eu.chainfire:librootjava:1.2.0")
-    implementation("eu.chainfire:librootjavadaemon:1.2.0")
+    implementation("eu.chainfire:librootjava:1.3.1")
+    implementation("eu.chainfire:librootjavadaemon:1.3.1")
 
     // Local files
     implementation("", "PatternLock", ext = "aar")

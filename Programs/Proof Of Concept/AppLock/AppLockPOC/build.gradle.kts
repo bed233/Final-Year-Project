@@ -4,12 +4,14 @@ buildscript {
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath(Config.BuildPlugins.androidGradlePlugin)
         classpath(Config.BuildPlugins.kotlinGradlePlugin)
         classpath("com.jakewharton.hugo:hugo-plugin:1.2.1")
     }
+
 }
 
 allprojects {
