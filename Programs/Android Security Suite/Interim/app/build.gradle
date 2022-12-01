@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.rhul.fyp.interimsuite'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.rhul.fyp.interimsuite"
         minSdk 16
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 

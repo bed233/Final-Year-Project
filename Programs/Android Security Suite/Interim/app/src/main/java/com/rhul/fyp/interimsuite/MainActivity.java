@@ -17,11 +17,13 @@ public class MainActivity extends AppCompatActivity {
         final Button fileScan = findViewById(R.id.fileScan);
         final Button appScan = findViewById(R.id.appScan);
         fileScan.setOnClickListener(view ->{
-            startActivity(new Intent(MainActivity.this,
+            finish();
+            startActivity(new Intent(com.rhul.fyp.interimsuite.MainActivity.this,
                     com.rhul.fyp.interimsuite.hypatia.MainActivity.class));
         });
         appScan.setOnClickListener(view ->{
-            startActivity(new Intent(MainActivity.this,
+            finish();
+            startActivity(new Intent(com.rhul.fyp.interimsuite.MainActivity.this,
                     com.rhul.fyp.interimsuite.libreav.activities.MainActivity.class));
         });
     }

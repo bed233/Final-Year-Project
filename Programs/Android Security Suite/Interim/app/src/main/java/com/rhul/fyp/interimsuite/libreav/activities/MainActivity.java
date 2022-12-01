@@ -18,8 +18,6 @@
 
 package com.rhul.fyp.interimsuite.libreav.activities;
 
-import static com.rhul.fyp.interimsuite.libreav.helper.ThemeToggleHelper.toggleDarkMode;
-
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
@@ -31,29 +29,35 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
+
+import com.rhul.fyp.interimsuite.libreav.scanners.ApkScanner;
+import com.rhul.fyp.interimsuite.libreav.services.RealTimeService;
+import com.rhul.fyp.interimsuite.libreav.settings.SettingsActivity;
 
 import com.github.angads25.filepicker.model.DialogConfigs;
 import com.github.angads25.filepicker.model.DialogProperties;
 import com.github.angads25.filepicker.view.FilePickerDialog;
 import com.google.android.material.navigation.NavigationView;
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.scanners.ApkScanner;
-import com.rhul.fyp.interimsuite.libreav.services.RealTimeService;
-import com.rhul.fyp.interimsuite.libreav.settings.SettingsActivity;
 
 import java.io.File;
+
+import com.rhul.fyp.interimsuite.R;
+
+import static com.rhul.fyp.interimsuite.libreav.helper.ThemeToggleHelper.toggleDarkMode;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SharedPreferences.OnSharedPreferenceChangeListener {
@@ -71,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.libreav_activity_main);
         setupSharedPreferences();
 
-        toggleDarkMode(sharedPreferences.getBoolean("darkMode", true));
+        toggleDarkMode(sharedPreferences.getBoolean("darkMode", false));
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         lastScanText = findViewById(R.id.textView1);
@@ -253,9 +257,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_bug_report) {
             this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://github.com/projectmatris/antimalwareapp/issues/new")));
         } else if (id == R.id.nav_share) {
-            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            String shareContent = "Check out LibreAV, a free and open-source anti-malware using machine learning: https://f-droid.org/en/packages/com.rhul.fyp.malwarepoc.libreav/";
+            String shareContent = "Check out LibreAV, a free and open-source anti-malware using machine learning: https://f-droid.org/en/packages/tech.projectmatris.antimalwareapp/";
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Project Matris");
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareContent);
             startActivity(Intent.createChooser(shareIntent, "Share via"));
