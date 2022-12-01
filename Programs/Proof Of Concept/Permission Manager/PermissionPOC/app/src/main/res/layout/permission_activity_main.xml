@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <include layout="@layout/content_main"/>
+    <include layout="@layout/permission_content_main"/>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
