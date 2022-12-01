@@ -73,3 +73,13 @@ Completed my early delvierable report for my interim report and have begun looki
 
 ## 21/11/2022
 Made more progress on my FYP interim report. Have begun and completed around half of my 2nd Section (Technical Achievements). Have questions about the report which I shall ask to my supervisor in Our meeting on Wednesday. Will get the demo of the Permission manager ready in order to show my supervisor in the same meeting.
+
+## 22/11/2022 - 25/11/2022
+Continued work on Final Year Report 
+
+## 28/11/2022
+Begun New project on Android Studio to merge all of Proof Of Concept's together. Hoping I can get all merged by wednesday where I can record demo video on Thursday ready for submission.
+Continued work on Final Year Project
+
+## 29/11/2022
+Continued work on Final Year Report
