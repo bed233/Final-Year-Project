@@ -40,6 +40,22 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
+        <activity
+            android:name=".permissionpoc.MainActivity"
+            android:exported="true" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".permissionpoc.ResultActivity"/>
+        <activity android:name=".permissionpoc.AppDetails"/>
     <activity
         android:name=".hypatia.MainActivity"
         android:configChanges="orientation|keyboardHidden"
