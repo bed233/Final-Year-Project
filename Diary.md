@@ -83,3 +83,6 @@ Continued work on Final Year Project
 
 ## 29/11/2022
 Continued work on Final Year Report
+
+## 01/12/2022
+Completed majorirty of Proof Of Concept merging and completed report and demo video.
