@@ -4,7 +4,10 @@
     <string name="app_copyright">Copyright 2017-2022 Divested Computing Group</string>
     <string name="app_license">License: GPL-3.0</string>
     <string name="app_db_type_clamav">Powered by ClamAV style signatures</string>
-
+    <string name="app_icon">App Icon</string>
+    <string name="openInSettings">Open In Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <!-- Strings used for fragments for navigation -->
     <string name="lblOnionRoutingToggle">Download over Tor</string>
     <string name="lblOnionRoutingEnabledHint">Downloading over Tor, this may take a while...</string>
     <string name="lblOnionRoutingNotInstalled">Orbot is not installed!</string>
