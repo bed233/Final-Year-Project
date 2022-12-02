@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_700"
+    android:background="@drawable/libreav_app_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AppDetails">
+    tools:context=".permissionpoc.AppDetails">
 
     <LinearLayout
         android:id="@+id/app_info"
