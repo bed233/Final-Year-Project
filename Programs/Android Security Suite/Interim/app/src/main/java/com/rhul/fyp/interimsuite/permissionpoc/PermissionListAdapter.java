@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rhul.fyp.interimsuite.R;
+
 import java.util.ArrayList;
 
 public class PermissionListAdapter extends RecyclerView.Adapter<PermissionListAdapter.ViewHolder> {

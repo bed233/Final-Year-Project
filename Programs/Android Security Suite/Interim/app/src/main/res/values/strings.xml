@@ -152,4 +152,6 @@
     <string name="sample_text" translatable="false">Sample</string>
     <string name="custom_scan">Custom Scan</string>
     <string name="sponsor">Sponsor</string>
+    <string name="AppLocker">App Locker</string>
+    <string name="PermissionManager">Permission Manager</string>
 </resources>

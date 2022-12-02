@@ -27,8 +27,8 @@
 
         <Button
             android:id="@+id/fileScan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
             android:layout_gravity="center_vertical|center_horizontal"
             android:clickable="true"
             android:background="@drawable/rounded_button_left"
@@ -42,8 +42,8 @@
 
         <Button
             android:id="@+id/appScan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
             android:layout_gravity="center_vertical|center_horizontal"
             android:clickable="true"
             android:focusable="true"
@@ -55,8 +55,47 @@
             tools:ignore="TextContrastCheck"
             android:layout_marginStart="1dp" />
 
+
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:paddingTop="45pt">
+
+        <Button
+            android:id="@+id/appLocker"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/rounded_button_left"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/AppLocker"
+            android:textColor="@color/black"
+            app:useCompatPadding="true"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/permissionManager"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/rounded_button_right"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/PermissionManager"
+            android:textColor="@color/black"
+            app:useCompatPadding="true"
+            tools:ignore="TextContrastCheck" />
+
+
+    </LinearLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.rhul.fyp.interimsuite.R;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 

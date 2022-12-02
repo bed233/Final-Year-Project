@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.rhul.fyp.interimsuite.R;
+
 public class MainActivity extends AppCompatActivity {
     Button scanButton;
 
