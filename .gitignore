@@ -4,4 +4,4 @@
 *.bin
 *.lock
 *.gradle/
-*/build/
+build/*
