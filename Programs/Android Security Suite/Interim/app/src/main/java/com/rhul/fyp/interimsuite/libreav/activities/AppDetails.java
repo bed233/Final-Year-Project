@@ -52,7 +52,7 @@ public class AppDetails extends AppCompatActivity {
         setContentView(R.layout.libreav_activity_app_details);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        toggleDarkMode(sharedPreferences.getBoolean("darkMode", true));
+        toggleDarkMode(sharedPreferences.getBoolean("darkMode", false));
 
         ActionBar actionBar = this.getSupportActionBar();
 
@@ -157,12 +157,14 @@ public class AppDetails extends AppCompatActivity {
         PackageManager pm = this.getPackageManager();
         if(requestCode==1 && !isPackageInstalled(packageName,pm)) {
             Toast.makeText(AppDetails.this,this.getString(R.string.uninstall_successful),Toast.LENGTH_LONG).show();
+            finish();
             startActivity(new Intent(AppDetails.this, MainActivity.class));
         }
     }
 
     @Override
     public boolean onSupportNavigateUp() {
+        finish();
         super.onBackPressed();
 //        startActivity(new Intent(this,MainActivity.class));
         return true;
@@ -170,6 +172,7 @@ public class AppDetails extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        finish();
         super.onBackPressed();
         //startActivity(new Intent(this,MainActivity.class));
     }
