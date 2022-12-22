@@ -86,3 +86,6 @@ Continued work on Final Year Report
 
 ## 01/12/2022
 Completed majorirty of Proof Of Concept merging and completed report and demo video.
+
+## 22/12/2022
+Realised that I forgot to actually push my Interim Submission and AppLockPOC to the Gitlab so have done that. Over the past few days I have been looking into potentially using Google Flutter in order to create my UI to see if this would make the creation process any quicker and make the UI look more seamless and clean.
