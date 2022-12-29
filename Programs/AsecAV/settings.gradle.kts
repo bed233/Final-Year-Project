@@ -15,4 +15,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AsecAV"
-include ':app'
+include (":app")

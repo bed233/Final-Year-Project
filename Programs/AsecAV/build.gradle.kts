@@ -1,18 +1,18 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.0.0'
+    extra["kotlin_version"] = "1.0.0"
     repositories {
         google()
         mavenCentral()
         jcenter()
-        maven {url "https://plugins.gradle.org/m2/"}
-        maven { url 'https://jitpack.io' }
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven("https://plugins.gradle.org/m2/")
+        maven("https://jitpack.io")
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.1'
-        classpath "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:8.9.4"
+        classpath ("com.android.tools.build:gradle:7.3.1")
+        classpath ("com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:8.9.4")
 
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -25,10 +25,10 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
-        maven { url 'https://jitpack.io' }
+        maven("https://jitpack.io")
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+tasks.register<Delete>("clean").configure {
+    delete(rootProject.buildDir)
 }
