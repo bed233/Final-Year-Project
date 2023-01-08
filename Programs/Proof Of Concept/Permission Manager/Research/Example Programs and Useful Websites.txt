@@ -1,0 +1,9 @@
+https://github.com/projectmatris/antimalwareapp
+
+https://github.com/mirfatif/PermissionManagerX
+
+https://github.com/MuntashirAkon/AppManager
+
+https://developer.android.com/guide/topics/manifest/manifest-intro#perms
+
+https://stackoverflow.com/questions/2169294/how-to-add-manifest-permission-to-an-applications
