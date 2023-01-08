@@ -1,3 +1,0 @@
-From Preliminary Research, It is looking unlikely that I will be able to create a functioning app that can manage and block app permissions on an app-per-app basis without needing the phone to be rooted.
-I will look into this more but I may have to settle with an app that can view and group apps by their permissions but redirects the user to the Android App Settings page for the selected app.
-I believe that there is still value to this as It will still provide the benefit of filtering by permissions for the user.
