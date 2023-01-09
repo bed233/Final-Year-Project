@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/libreav_app_background"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal">
+
+        <Button
+            android:id="@+id/fileScan"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:clickable="true"
+            android:background="@drawable/rounded_button_left"
+            android:focusable="true"
+            android:text="@string/scan_files"
+            android:layout_marginRight="1dp"
+            android:textColor="@color/black"
+            app:useCompatPadding="true"
+            tools:ignore="TextContrastCheck"
+            android:layout_marginEnd="1dp" />
+
+        <Button
+            android:id="@+id/appScan"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/rounded_button_right"
+            android:text="@string/scan_apps"
+            android:layout_marginLeft="1dp"
+            android:textColor="@color/black"
+            app:useCompatPadding="true"
+            tools:ignore="TextContrastCheck"
+            android:layout_marginStart="1dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:paddingTop="45pt">
+
+        <Button
+            android:id="@+id/appLocker"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/rounded_button_left"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/AppLocker"
+            android:textColor="@color/black"
+            app:useCompatPadding="true"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/permissionManager"
+            android:layout_width="75pt"
+            android:layout_height="20pt"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/rounded_button_right"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/PermissionManager"
+            android:textColor="@color/black"
+            app:useCompatPadding="true"
+            tools:ignore="TextContrastCheck" />
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

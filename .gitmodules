@@ -1,0 +1,10 @@
+[submodule "libreav"]
+	path = libreav
+	url = https://zjac078:glpat-rm7Qeq4cmyiAhkULoD7m@gitlab.cim.rhul.ac.uk/zjac078/libreav
+[submodule "Hypatia"]
+	path = Hypatia
+	url = https://zjac078:glpat-rm7Qeq4cmyiAhkULoD7m@gitlab.cim.rhul.ac.uk/zjac078/Hypatia
+[submodule "MaxLock"]
+	path = MaxLock
+	url = https://zjac078:glpat-rm7Qeq4cmyiAhkULoD7m@gitlab.cim.rhul.ac.uk/zjac078/MaxLock
+
