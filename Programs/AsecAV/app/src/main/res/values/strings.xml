@@ -1,158 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name" translatable="false">AndSecure</string>
-    <string name="app_copyright">Copyright 2017-2022 Divested Computing Group</string>
-    <string name="app_license">License: GPL-3.0</string>
-    <string name="app_db_type_clamav">Powered by ClamAV style signatures</string>
-    <string name="app_icon">App Icon</string>
-    <string name="openInSettings">Open In Settings</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="lblOnionRoutingToggle">Download over Tor</string>
-    <string name="lblOnionRoutingEnabledHint">Downloading over Tor, this may take a while...</string>
-    <string name="lblOnionRoutingNotInstalled">Orbot is not installed!</string>
-    <string name="lblOnionRoutingNotRunning">Orbot is not running!</string>
-    <string name="lblUpdateDatabase">Update databases</string>
-    <string name="lblSelectDatabases">Select databases</string>
-    <string name="lblSelectDatabasesTitle">Select databases to enable</string>
-    <string name="lblDatabaseServer">Database server override</string>
-    <string name="lblFullCredits">Credits</string>
-    <string name="lblScanSystem">Scan /system</string>
-    <string name="lblScanApps">Scan App APKs</string>
-    <string name="lblScanInternal">Scan Internal Storage</string>
-    <string name="lblScanExternal">Scan External Storage</string>
-    <string name="lblNotificationMalwareDetectionTitle">Malware Detection</string>
-    <string name="lblNotificationMalwareDetectionDescription">Used to alert when malware is detected</string>
-    <string name="lblNotificationRealtimeTitle">Realtime Scanner</string>
-    <string name="lblNotificationRealtimeDescription">Used to show files scanned counter and maintain the background service</string>
-    <string name="lblNotificationRealtimeText">Known malware will be detected in realtime</string>
-    <string name="lblNotificationRealtimeStopped">Hypatia: Realtime Scanning Stopped</string>
-    <string name="lblNotificationRealtimeDetection">Malware Detected:</string>
-    <string name="lblRealtimeScannerToggle">Realtime Scanner</string>
-    <string name="lblReset">Reset</string>
-    <string name="lblOverride">Override</string>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="sb_no_locking_type">No locking type specified</string>
+    <string name="sb_no_locked_apps">No apps chosen to lock</string>
+    <string name="sb_action_setup">SET UP</string>
+    <string name="dialog_need_storage_permission_oreo">MaxLock needs the storage permission to read your wallpaper since Android 8.1 Oreo.
+        Please grant it in the next dialog.</string>
+    <string name="dialog_maxlock_updated">MaxLock was updated!</string>
+    <string name="dialog_button_whats_new">What\'s new</string>
+    <string name="dialog_button_got_it">Got it</string>
+    <string name="notification_lock_new_app_title">Lock newly installed app?</string>
+    <string name="notification_lock_new_app_action_never_again">Never show again</string>
+    <string name="notification_lock_new_app_action_lock">Lock app</string>
+    <string name="toast_lock_new_app_locked_successfully">Locked successfully</string>
+    <string name="dialog_text_restart_required">MaxLock requires a restart for changes to take effect</string>
+    <string name="toast_pro_required">Pro-version is required to use this feature!</string>
+    <!-- First start screens-->
+    <string name="fs_welcome_maxlock">Welcome to MaxLock!</string>
+    <string name="fs_maxlock_description">MaxLock will protect your apps from unauthorized access</string>
+    <string name="fs_app_package_installer">Package Installer</string>
+    <string name="fs_app_settings">Settings</string>
+    <string name="fs_app_xposed_installer">Xposed Installer</string>
+    <string name="fs_recommended_apps">Enable further protection by locking these apps</string>
+    <string name="fs_recommended_apps_summary">You should tick all these apps to make sure MaxLock cannot be disabled or uninstalled</string>
+    <!-- Locking type settings -->
+    <string name="pref_category_locking">Lock</string>
+    <string name="pref_screen_locking_type">Locking type</string>
+    <string name="pref_locking_type_password">Password</string>
+    <string name="pref_locking_type_pin">PIN</string>
+    <string name="pref_locking_type_knockcode">Knock code</string>
+    <string name="pref_locking_type_pattern">Pattern</string>
 
-    <string name="main_database_updating">Updating %s databases...</string>
-    <string name="main_database_override">Using server %s</string>
-    <string name="main_database_downloading">Downloading %s</string>
-    <string name="main_database_download_success">Successfully downloaded</string>
-    <string name="main_database_download_error">File not downloaded, response code %s</string>
-    <string name="main_no_database_available">No database available, not scanning...</string>
-    <string name="main_database_released_on">Released on %s</string>
-    <string name="main_database_not_changed">File not changed</string>
-    <string name="main_database_not_modified_since">since %s</string>
-    <string name="main_database_download_error_logcat">Failed to download, check logcat</string>
+    <string name="pref_set_password">Set password</string>
+    <string name="toast_password_inconsistent">Password is inconsistent!</string>
+    <string name="toast_password_null">Password can not be empty!</string>
+    <string name="toast_password_changed">Password was changed!</string>
+    <string name="dialog_text_password">Password</string>
+    <string name="dialog_text_re_password">Retype password</string>
 
-    <string name="main_starting_scan">Starting scan...</string>
-    <string name="main_cancelling_scan">Cancelling scan...</string>
-    <string name="main_cancelled_scan">Cancelled scan</string>
-    <string name="main_files_pending_scan">%s files pending scan</string>
-    <string name="main_database_loading">Loading database...</string>
-    <string name="main_database_loaded">Loaded database with %s signatures</string>
-    <string name="main_hashing_files">Hashing files...</string>
-    <string name="main_hashing_done">Calculated hashes for all files</string>
-    <string name="main_hash_scan_done">Checked all %s hashes against signature databases</string>
-    <string name="main_no_hashes_available">No %s hashes signatures available</string>
-    <string name="main_scanning_done">Scan completed in %s seconds @ %sMB/s!</string>
-    <string name="main_files_scanned_count">%s files scanned</string>
-    <string name="db_desc_author">Author</string>
-    <string name="db_desc_license">License</string>
-    <string name="db_desc_size">Size</string>
-    <string name="db_desc_source">Source</string>
-    <string name="db_desc_size_small">Small</string>
-    <string name="db_desc_size_medium">Medium</string>
-    <string name="db_desc_size_large">Large</string>
-    <string name="title_activity_main">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="choose_pin">Choose your PIN</string>
+    <string name="pin_too_short">PIN must have a least 4 digits</string>
+    <string name="continue_done">Touch continue when done</string>
+    <string name="confirm_pin">Confirm your PIN</string>
+    <string name="button_continue">Continue</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="scan_files">Scan Files</string>
-    <string name="scan_apps">Scan Apps</string>
-    <string name="hypatia">Hypatia</string>
-    <string name="scan_now">SCAN NOW</string>
-    <string name="settings_title">SETTINGS</string>
-    <string name="help_title">HELP</string>
+    <string name="choose_knock_code">Choose your knock code</string>
+    <string name="knock_code_too_short">Knock code must be a least 4 touches</string>
+    <string name="confirm_knock_code">Confirm your knock code</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="scan">Scan</string>
-    <string name="scanningApplications">Scanning Applications</string>
-    <string name="appIcon">App icon</string>
-    <string name="stop">STOP</string>
-    <string name="project_version">v1.0</string>
-    <string name="settings">Settings</string>
-    <string name="help">Help</string>
-    <string name="about">About</string>
-    <string name="report_a_bug">Report a bug</string>
-    <string name="share">Share</string>
-    <string name="help_goodware">Safe: The prediction score is less than 0.5.</string>
-    <string name="help_malware">Malware: The prediction score is greater than 0.75.</string>
-    <string name="help_risky">Risky: The prediction score is between 0.5 and 0.75.</string>
-    <string name="help_unknown">Unknown: We cannot determine the type of the application.</string>
-    <string name="uninstall">Uninstall</string>
-    <string name="sysapps_alert"><u>Note:</u> The scan system apps feature is included for experimental purpose only. We really do not recommend enabling it as it may show lot of false positives.</string>
-    <string name="emptystring" />
-    <string name="percent_start">0%</string>
-    <string name="real_time_scan_desc">Real Time Scan is a feature that enables the anti-malware application to detect new app installations on the device and scan them. If enabled, the anti-malware app can automatically scan newly installed applications. You can enable/disable this feature in settings. This feature is enabled by default.</string>
-    <string name="how_it_works_desc">LibreAV uses permissions and intent-filters to detect malicious apps. While scanning, it loads the machine learning model and extracts permissions and intents from the installed applications on your device. These extracted features are then fed to the machine learning model in the form of a vector. The machine learning model returns a prediction score between 0 and 1 that denote the degree of maliciousness of the scanned application. We use this score to classify the scanned app into one of the following categories:</string>
-    <string name="project_description">LibreAV is an attempt to detect malwares in Android devices by utilizing machine learning approach.</string>
-    <string name="what_is_libreav">* What is LibreAV?</string>
-    <string name="what_is_real_time_scan">* What is Real Time Scan?</string>
-    <string name="how_it_works">* How it works?</string>
-    <string name="what_is_scan_system_apps_feature">* What does Scan System Apps feature mean?</string>
-    <string name="scan_system_apps_desc">Scan system apps is a feature that tells the anti-malware application to analyze system applications also. You can enable/disable this feature in settings. This feature is disabled by default.</string>
-    <string name="logo">Logo</string>
-    <string name="iconDescription">Icon</string>
-    <string name="permission_list">Permissions List</string>
-    <string name="app_details">APP DETAILS</string>
-    <string name="scanning">SCANNING</string>
-    <string name="report">REPORT</string>
-    <string name="no_permissions_required">No permissions required!</string>
-    <string name="prediction_score">Prediction Score :</string>
-    <string name="malware">Malware</string>
-    <string name="safe">Safe</string>
-    <string name="risky">Risky</string>
-    <string name="unknown">Unknown</string>
-    <string name="app_settings">App Settings</string>
-    <string name="real_time_scan">Real Time Scan</string>
-    <string name="real_time_scan_summary">Automatically scan new apps</string>
-    <string name="scan_system_apps">Scan System Apps (Error-prone)</string>
-    <string name="scan_system_apps_summary">Include system apps while scanning \n(Not recommended)</string>
-    <string name="dark_mode">Dark Mode</string>
-    <string name="dark_mode_summary">Enable/disable dark mode for the app</string>
-    <string name="help_and_support">Help &amp; Support</string>
-    <string name="rate_this_app">Rate this app</string>
-    <string name="rate_this_app_summary">Give us feedback</string>
-    <string name="open_source_libraries">Open Source Libraries</string>
-    <string name="open_source_libraries_summary">View open source libraries</string>
-    <string name="app_version_text">App Version</string>
-    <string name="system_app">System App</string>
-    <string name="uninstall_successful">Uninstall Successful!</string>
-    <string name="last_scan">Last Scan:</string>
-    <string name="never">Never</string>
-    <string name="scan_system_apps_toast">System apps will be included while scanning</string>
-    <string name="dark_mode_enabled_toast">Dark Mode is Enabled</string>
-    <string name="dark_mode_disabled_toast">Dark Mode is Disabled</string>
-    <string name="real_time_scan_on">Real Time Scan is On</string>
-    <string name="is">\u0020is\u0020</string>
-    <string name="permission_info">Permission Info</string>
-    <string name="no_description_found">No description found</string>
-    <string name="notice">⚠️⚠️ PLEASE BE AWARE THAT LIBREAV IS STILL IN ITS EARLY STAGES OF DEVELOPMENT AND MAY CONTAIN A LOT OF FALSE POSITIVES IN PREDICTION. THIS PROJECT IS DEVELOPED FOR EDUCATIONAL PURPOSES ONLY AND WE MAKE NO GUARANTEE THAT THE OUTPUT PRODUCED BY LIBREAV IS ABSOLUTELY CORRECT. SO PLEASE DO NOT JUDGE OTHER APPLICATIONS USING THE OUTPUT OF LIBREAV ALONE.⚠️⚠️</string>
-    <string name="scan_apk">Scan APK</string>
-    <string name="permission_denied_message">Permission is required for getting list of files</string>
-    <string name="select_a_file">Select a File</string>
-    <string name="file_does_not_exist">File does not exist</string>
-    <string name="error_loading_file">Error loading file</string>
-    <string name="sha256_hash" translatable="false">SHA256 Hash</string>
-    <string name="sample_text" translatable="false">Sample</string>
-    <string name="custom_scan">Custom Scan</string>
-    <string name="sponsor">Sponsor</string>
-    <string name="AppLocker">App Locker</string>
-    <string name="PermissionManager">Permission Manager</string>
-    <string name="app_version">1.0</string>
+    <string name="pref_category_fingerprint">Fingerprint</string>
+    <string name="pref_disable_fingerprint">Disable fingerprint unlocking</string>
+    <string name="pref_disable_fingerprint_summary">Fingerprint unlock is enabled by default when you have fingerprints enrolled to your device
+        and can be used with any of the above locking types</string>
+    <string name="pref_fingerprint_summary_non_enrolled">.\nCurrently, no fingerprints are enrolled.
+        Enroll at least one in settings to use this feature.</string>
+    <string name="pref_disable_fingerprint_summary_on">Fingerprint unlock disabled</string>
+    <!-- Locking UI settings -->
+    <string name="pref_screen_locking_ui">Lockscreen UI</string>
+    <string name="pref_background">Background image</string>
+    <string-array name="background_types">
+        <item>Wallpaper</item>
+        <item>@string/pref_custom_color</item>
+        <item>Custom image…</item>
+    </string-array>
+    <string name="pref_custom_color">Custom color</string>
+    <string name="pref_hide_status_bar">Hide status bar/Fullscreen</string>
+    <string name="pref_invert_color">Invert color of UI elements</string>
+    <string name="pref_invert_color_summary">This sets the color of texts and dividers to black</string>
+    <string name="pref_hide_title_bar">Hide title bar</string>
+    <string name="pref_category_password_and_pin">Password and PIN</string>
+    <string name="pref_quick_unlock">Quick unlock</string>
+    <string name="pref_category_pin_only">PIN only</string>
+    <string name="pref_shuffle_pin">Shuffle digits</string>
+    <string name="pref_category_pin_and_knock_code">PIN and knock code</string>
+    <string name="pref_hide_input_bar">Hide input bar</string>
+    <string name="pref_hide_input_bar_summary">This hides clear button, too, however, you can still clear the code by long pressing digits/container</string>
+    <string name="pref_category_pin_and_pattern">PIN and pattern</string>
+    <string name="pref_haptic_feedback">Vibrate on input</string>
+    <string name="pref_category_knock_code_only">Knock code only</string>
+    <string name="pref_show_dividers">Show divider</string>
+    <string name="pref_touch_visible">Make touches visible</string>
+    <string name="pref_category_pattern_only">Pattern only</string>
+    <string name="pref_show_path">Show path</string>
+    <string name="pref_hide_fingerprint_icon">Hide fingerprint icon</string>
+    <!-- Locking options settings -->
+    <string name="pref_screen_locking_options">Locking options</string>
+    <string name="pref_category_logging">Logging</string>
+    <string name="pref_enable_logging">Enable logging</string>
+    <string name="pref_enable_logging_summary">Log failed/unfinished unlock attempts</string>
+    <string name="pref_view_logs">View logs</string>
+    <string name="pref_screen_logs">Logs</string>
+    <string name="menu_delete_log">Delete logs</string>
+    <string name="logs_empty_text">There are no log entries</string>
+    <string name="pref_category_fake_crash">Fake crash</string>
+    <string name="pref_fake_crash_enable_all_apps">Enable for all apps</string>
+    <string name="pref_fake_crash_enable_all_apps_summary">This overrides the setting from the app list for all apps</string>
+    <string name="pref_fake_crash_passphrase">\"Report\" Passphrase</string>
+    <string name="pref_fake_crash_passphrase_summary">The phrase the user needs to input in the dialog to open lockscreen</string>
+    <string name="pref_fake_crash_instant_lockscreen">Show lockscreen instantly</string>
+    <string name="pref_fake_crash_instant_lockscreen_summary">When enabled the lock screen is displayed directly after pushing the <i>\"Report"</i> button in the \"Unfortunately, X has stopped.\" dialog</string>
+    <string name="pref_fake_crash_enable_passphrase_unlock">Unlock through passphrase</string>
+    <string name="pref_fake_crash_enable_passphrase_unlock_summary">Directly unlock with the right passphrase, without showing lockscreen\n
+        (Note: the passphrase is stored as plain-text in the private app storage and thus potentially insecure)</string>
+    <string name="pref_category_other">Others</string>
+    <string name="pref_enable_tasker">Enable Tasker integration</string>
+    <!-- I.Mod settings -->
+    <string name="pref_screen_delayed_relock">Delayed re-lock options</string>
+    <string name="pref_screen_delayed_relock_summary">Don\'t re-lock apps until a certain timespan has passed - previously called Intika I.Mod</string>
+    <string name="pref_category_delay_general">General</string>
+    <string name="pref_delay_general">General delayed re-lock</string>
+    <string name="pref_delay_general_summary">Don\'t ask for another unlock within a certain period of time after any app has been unlocked</string>
+    <string name="pref_delay_general_input">General delayed re-lock timer</string>
+    <string name="pref_delay_general_input_summary">Enter a number to specify the delay time value in minute for global delayed re-lock</string>
+    <string name="pref_category_delay_per_app">Per app</string>
+    <string name="pref_delay_per_app">Per app delayed re-lock</string>
+    <string name="pref_delay_per_app_summary">Don\'t ask for another unlock of a specific app within a certain period of time after the app has been unlocked</string>
+    <string name="pref_delay_per_app_input">Per app delayed re-lock timer</string>
+    <string name="pref_delay_per_app_input_summary">Enter a number to specify the delay time value in minute for per app delayed re-lock</string>
+    <string name="pref_delay_needpro">Delayed re-lock - Pro version</string>
+    <string name="pref_category_reset_relock_timer">Reset timer options</string>
+    <string name="pref_reset_relock_timer_description">These options can be used to ask for authentication instantly on the next app start
+        instead of waiting for the re-lock timer to elapse</string>
+    <string name="pref_show_reset_notification">Show reset notification</string>
+    <string name="pref_show_reset_notification_summary">Show a notification to reset re-lock timer when clicked</string>
+    <string name="pref_reset_screen_off">Reset on screen-off</string>
+    <string name="pref_reset_screen_off_summary">Reset re-lock timer when the screen is turned off</string>
+    <string name="pref_imod_reset_on_homescreen">Reset on homescreen</string>
+    <string name="pref_imod_reset_on_homescreen_summary">Reset re-lock timer when navigating to the homescreen</string>
+    <string name="pref_hide_recents_thumbnails">Hide recents thumbnails</string>
+    <string name="pref_hide_recents_thumbnails_summary">Remove preview thumbnails from locked apps from the recents screen</string>
+    <!-- Apps settings -->
+    <string name="pref_category_apps">Apps</string>
+    <string name="pref_choose_apps">Choose apps</string>
+    <string name="pref_choose_apps_summary">Select apps to be locked</string>
+    <string name="pref_screen_apps">@string/pref_category_apps</string>
+
+    <string name="menu_backup_list">Backup list</string>
+    <string name="menu_restore_list">Restore list</string>
+    <string name="menu_clear_list">Clear list</string>
+    <string name="menu_all_apps">Load all apps</string>
+    <string name="menu_only_openable">Only load openable apps</string>
+    <string name="dialog_storage_permission_backup_restore">MaxLock needs to access your external storage to read/write the backup files. Proceed?</string>
+    <string name="toast_no_files_to_backup">No files found to backup</string>
+    <string name="toast_backup_restore_exception">There was an error.\nPlease contact developer!</string>
+    <string name="toast_backup_success">Backup successfully completed</string>
+    <string name="dialog_text_restore_list">This will replace the current settings with the one from the backup!</string>
+    <string name="toast_no_files_to_restore">No files found to restore</string>
+    <string name="toast_restore_success">Backup successfully restored!</string>
+    <string name="menu_search">Search</string>
+    <string name="toggle_lock_on">On</string>
+    <string name="toggle_lock_off">Off</string>
+    <string name="dialog_title_options">Options</string>
+    <string-array name="dialog_multi_select_items_options">
+        <item>Custom password</item>
+        <item>Fake crash</item>
+        <item>Hide notifications</item>
+        <item>Hide notification content</item>
+    </string-array>
+    <string name="notification_hidden_by_maxlock" tools:ignore="unused">Content hidden by MaxLock</string>
+    <string name="dialog_button_exclude_activities">Activities</string>
+    <string name="dialog_title_exclude_activities">Exclude Activities from lock</string>
+    <string name="dialog_button_invert_activities">Invert</string>
+    <!-- UI settings -->
+    <string name="pref_category_ui">UI settings</string>
+    <string name="pref_hide_from_launcher">Hide app from launcher</string>
+    <string name="reboot_required">A reboot may be required to apply changes</string>
+    <string name="pref_use_dark_style">Use dark style</string>
+    <string name="pref_use_amoled_black">Use AMOLED black</string>
+    <string name="pref_use_amoled_black_summary">Use a full black background in the dark theme, resulting in low energy usage for AMOLED displays</string>
+    <string name="pref_new_app_notification">New app notification</string>
+    <string name="pref_new_app_notification_summary">Ask whether to lock a newly installed application</string>
+    <!-- About information -->
+    <string name="pref_category_about">About</string>
+    <string name="pref_about_summary">Click to see credits, used libs and license</string>
+    <string name="pref_screen_about">@string/pref_category_about</string>
+    <string name="pref_visit_website">Visit Maxr1998\'s website</string>
+    <string name="pref_show_changelog">Show changelog</string>
+    <string name="pref_category_credits">Credits</string>
+    <string name="pref_category_translations">Translations</string>
+    <string name="pref_category_licenses">Licenses</string>
+    <string name="pref_donate_upgrade_pro">Donate to upgrade to pro-version</string>
+    <string name="pref_donate_thanks_for_donation">Thanks for your donation!</string>
+    <string name="pref_donate_again_on_pro_summary">If you want, you can donate again here :)</string>
+    <string name="donate_status_donated">@string/pref_donate_thanks_for_donation</string>
+    <string name="donate_status_not_donated">Consider donating to support further development. Thanks :)</string>
+    <string name="donate_status_error">Error: Couldn\'t load available products.</string>
+    <string name="dialog_message_already_bought">You already own this donation option.
+        You can cancel and pick another product or purchase this one again with consuming (removing) the current purchase in before.\n\nConsume and repurchase?</string>
+    <string name="pref_enable_pro">Enable Pro</string>
+    <string name="pref_enable_pro_summary">This will enable pro-features even if you haven\'t bought MaxLock Pro</string>
+    <string name="pref_prevent_uninstall">Protect app from being uninstalled</string>
+    <string name="pref_prevent_uninstall_summary">Acquire device administrator permissions for MaxLock, resulting the app cannot be uninstalled anymore.
+        You then have to uninstall this app either from here or deactivate admin from \"Settings → Security → Device administrators\" and then uninstall</string>
+    <string name="pref_uninstall">Uninstall</string>
+    <string name="device_admin_description">Protect MaxLock from being uninstalled and disabled</string>
+    <string name="pref_send_feedback">Send feedback / Report a bug</string>
+    <string name="dialog_storage_permission_bug_report">MaxLock needs to access your external storage to save logs and device info. Proceed?</string>
+    <string name="dialog_message_bugreport_finished_select_email">Logs and device info exported. Now select your favorite email application to send the logs to me.\n\n
+    <i>NOTE: No private information were collected.</i></string>
+    <string name="share_menu_title_send_email">Send email with…</string>
+    <!-- Fake crash screen -->
+    <string name="dialog_text_fake_die_stopped">Unfortunately, %1$s has stopped.</string>
+    <string name="dialog_button_report">Report</string>
+    <string name="dialog_title_report_problem">Report problem</string>
+    <!-- Lock screen messages -->
+    <string name="message_wrong_password">Wrong input</string>
+    <string name="message_try_again_in_seconds">Try again in %1$d seconds</string>
+    <string name="message_fingerprint_disabled">Fingerprint was disabled after too many wrong attempts</string>
+    <!-- Action stuff -->
+    <string name="activity_label_actions">MaxLock Actions</string>
+    <string name="action_configuration">Configuration:</string>
+    <string name="action_toggle_ms">Toggle MasterSwitch</string>
+    <string name="action_ms_on">MasterSwitch on</string>
+    <string name="action_ms_off">MasterSwitch off</string>
+    <string name="action_imod_reset">Reset I.Mod</string>
+    <string name="tasker_imod_reset_summary">Lock all apps which were previously unlocked with I.Mod</string>
+    <string name="tasker_button_apply">Apply</string>
+    <string name="tasker_integration_disabled">Tasker integration is currently disabled. You can enable it via \"MaxLock → Locking options → Enable Tasker integration\".</string>
+    <string name="unlock_master_switch">Unlock MasterSwitch</string>
+    <string name="toast_master_switch_off">MasterSwitch disabled</string>
+    <string name="toast_master_switch_on">MasterSwitch re-enabled</string>
+
+    <!-- Device admin external -->
+    <string name="maxlock_protected_admin" tools:ignore="unused">This admin is protected from being disabled. You can disable it from inside the MaxLock app, when tapping the \"%1$s\" option.</string>
+
+    <!-- Accessibility -->
+    <string name="content_description_fs_phone">Picture of a phone</string>
+    <string name="content_description_fs_lock">Lock on the phone</string>
+    <string name="content_description_lockscreen_current_input">Current input string</string>
+    <string name="content_description_lockscreen_delete">Remove last input digit</string>
+    <string name="content_description_lockscreen_container">Knock code container</string>
+    <string name="content_description_applist_filter">Current filter: %s</string>
+    <string name="content_description_applist_filter_all_apps">All apps</string>
+    <string name="content_description_applist_filter_locked">Locked apps</string>
+    <string name="content_description_applist_filter_unlocked">Unlocked apps</string>
+    <string name="content_description_applist_icon">App icon of %s</string>
+    <string name="content_description_applist_options">Change locking options of %s</string>
+    <string name="content_description_applist_toggle_off">Lock %s</string>
+    <string name="content_description_applist_toggle_on">Unlock %s</string>
 </resources>

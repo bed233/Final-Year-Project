@@ -89,3 +89,6 @@ Completed majorirty of Proof Of Concept merging and completed report and demo vi
 
 ## 22/12/2022
 Realised that I forgot to actually push my Interim Submission and AppLockPOC to the Gitlab so have done that. Over the past few days I have been looking into potentially using Google Flutter in order to create my UI to see if this would make the creation process any quicker and make the UI look more seamless and clean.
+
+## 09/01/2022
+Have continued to learn Google Flutter since last entry. Have now Gotten Maxlock to a state where it can be merged with the rest of the modules without causing any issues. Also modified MaxLock in order to allow it to be compatible with Android 5 and up instead of android 6.1 and above. Will Finish Merging modules into 1 app tommorow and then full focus on UI.
