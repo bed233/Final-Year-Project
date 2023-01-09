@@ -163,8 +163,10 @@ public final class MaxLockPreferenceFragment extends PreferenceFragmentCompat {
             case TYPE:
                 FingerprintManagerCompat fpm = FingerprintManagerCompat.from(getActivity());
                 if (!fpm.isHardwareDetected()) {
-                    getPreferenceScreen().removePreference(findPreference(Common.SHADOW_FINGERPRINT));
-                    getPreferenceScreen().removePreference(findPreference(Common.CATEGORY_FINGERPRINT));
+                    if ( SDK_INT >= Build.VERSION_CODES.M) {
+                        getPreferenceScreen().removePreference(findPreference(Common.SHADOW_FINGERPRINT));
+                        getPreferenceScreen().removePreference(findPreference(Common.CATEGORY_FINGERPRINT));
+                    }
                 } else {
                     CheckBoxPreference disableFP = (CheckBoxPreference) findPreference(Common.DISABLE_FINGERPRINT);
                     if (!fpm.hasEnrolledFingerprints() && !disableFP.isChecked()) {
