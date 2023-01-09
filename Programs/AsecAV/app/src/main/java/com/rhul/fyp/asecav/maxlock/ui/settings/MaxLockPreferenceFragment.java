@@ -163,7 +163,8 @@ public final class MaxLockPreferenceFragment extends PreferenceFragmentCompat {
             case TYPE:
                 FingerprintManagerCompat fpm = FingerprintManagerCompat.from(getActivity());
                 if (!fpm.isHardwareDetected()) {
-                    if ( SDK_INT >= Build.VERSION_CODES.M) { //09.01.2023 zjac078
+                    if ( SDK_INT >= Build.VERSION_CODES.M) { //09.01.2023 zjac078 Compatibility
+                        // with Android 5
                         getPreferenceScreen().removePreference(findPreference(Common.SHADOW_FINGERPRINT));
                         getPreferenceScreen().removePreference(findPreference(Common.CATEGORY_FINGERPRINT));
                     }
