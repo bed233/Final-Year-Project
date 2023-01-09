@@ -1,7 +1,0 @@
-*.log
-*.idea/
-*.iml
-*.bin
-*.lock
-*.gradle/
-*./build/
