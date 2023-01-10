@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite.permissionpoc;
+package com.rhul.fyp.asecav.permissionpoc;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.rhul.fyp.interimsuite.R;
+import com.rhul.fyp.asecav.R;
 
 public class MainActivity extends AppCompatActivity {
     Button scanButton;

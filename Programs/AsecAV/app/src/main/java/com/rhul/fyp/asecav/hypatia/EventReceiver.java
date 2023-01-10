@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-package com.rhul.fyp.interimsuite.hypatia;
+package com.rhul.fyp.asecav.hypatia;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

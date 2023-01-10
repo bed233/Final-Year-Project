@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-package com.rhul.fyp.interimsuite.hypatia;
+package com.rhul.fyp.asecav.hypatia;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -24,7 +24,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-import com.rhul.fyp.interimsuite.BuildConfig;
+import com.rhul.fyp.asecav.BuildConfig;
 
 import java.io.File;
 import java.net.Socket;

@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.scanners;
+package com.rhul.fyp.asecav.libreav.scanners;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -41,9 +41,9 @@ import android.widget.TextView;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.activities.ResultActivity;
-import com.rhul.fyp.interimsuite.libreav.data.AppInfo;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.activities.ResultActivity;
+import com.rhul.fyp.asecav.libreav.data.AppInfo;
 
 import org.json.JSONArray;
 import org.json.JSONException;

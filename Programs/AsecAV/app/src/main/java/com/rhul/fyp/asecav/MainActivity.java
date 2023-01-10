@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite;
+package com.rhul.fyp.asecav;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.rhul.fyp.interimsuite.permissionpoc.PermissionsScanner;
+import com.rhul.fyp.asecav.permissionpoc.PermissionsScanner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
         final Button permissionManager = findViewById(R.id.permissionManager);
         fileScan.setOnClickListener(view -> {
             finish();
-            startActivity(new Intent(com.rhul.fyp.interimsuite.MainActivity.this,
-                    com.rhul.fyp.interimsuite.hypatia.MainActivity.class));
+            startActivity(new Intent(com.rhul.fyp.asecav.MainActivity.this,
+                    com.rhul.fyp.asecav.hypatia.MainActivity.class));
         });
         appScan.setOnClickListener(view -> {
             finish();
-            startActivity(new Intent(com.rhul.fyp.interimsuite.MainActivity.this,
-                    com.rhul.fyp.interimsuite.libreav.activities.MainActivity.class));
+            startActivity(new Intent(com.rhul.fyp.asecav.MainActivity.this,
+                    com.rhul.fyp.asecav.libreav.activities.MainActivity.class));
         });
         PermissionsScanner scan = new PermissionsScanner(this, MainActivity.this);
         permissionManager.setOnClickListener(new View.OnClickListener() {

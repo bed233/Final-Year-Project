@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite.libreav.scanners;
+package com.rhul.fyp.asecav.libreav.scanners;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -9,10 +9,10 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.activities.AppDetails;
-import com.rhul.fyp.interimsuite.libreav.utils.AppConstants;
-import com.rhul.fyp.interimsuite.libreav.utils.Sha256HashExtractor;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.activities.AppDetails;
+import com.rhul.fyp.asecav.libreav.utils.AppConstants;
+import com.rhul.fyp.asecav.libreav.utils.Sha256HashExtractor;
 
 import net.dongliu.apk.parser.ApkFile;
 import net.dongliu.apk.parser.bean.ApkMeta;

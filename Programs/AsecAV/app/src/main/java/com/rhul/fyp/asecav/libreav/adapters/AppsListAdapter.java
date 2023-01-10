@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite.libreav.adapters;
+package com.rhul.fyp.asecav.libreav.adapters;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -14,8 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.scanners.AppScanner;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.scanners.AppScanner;
 
 import java.util.List;
 

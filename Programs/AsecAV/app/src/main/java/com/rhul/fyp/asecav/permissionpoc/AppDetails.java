@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite.permissionpoc;
+package com.rhul.fyp.asecav.permissionpoc;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhul.fyp.interimsuite.R;
+import com.rhul.fyp.asecav.R;
 
 import java.util.ArrayList;
 

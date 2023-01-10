@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.activities;
+package com.rhul.fyp.asecav.libreav.activities;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -29,8 +29,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.scanners.ScannerTask;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.scanners.ScannerTask;
 
 public class ScanActivity extends AppCompatActivity {
     /**

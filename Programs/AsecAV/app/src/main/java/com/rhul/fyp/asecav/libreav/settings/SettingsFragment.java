@@ -16,13 +16,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.settings;
+package com.rhul.fyp.asecav.libreav.settings;
 
 import android.os.Bundle;
 
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.rhul.fyp.interimsuite.R;
+import com.rhul.fyp.asecav.R;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
     @Override

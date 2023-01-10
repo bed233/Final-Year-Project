@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.services;
+package com.rhul.fyp.asecav.libreav.services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -36,9 +36,9 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.activities.MainActivity;
-import com.rhul.fyp.interimsuite.libreav.scanners.AppScanner;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.activities.MainActivity;
+import com.rhul.fyp.asecav.libreav.scanners.AppScanner;
 
 public class RealTimeService extends Service {
     private BroadcastReceiver receiver;

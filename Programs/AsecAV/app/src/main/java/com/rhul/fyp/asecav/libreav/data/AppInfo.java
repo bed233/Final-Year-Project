@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.data;
+package com.rhul.fyp.asecav.libreav.data;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;

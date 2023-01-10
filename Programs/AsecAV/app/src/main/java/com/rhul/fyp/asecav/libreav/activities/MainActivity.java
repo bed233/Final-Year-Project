@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.activities;
+package com.rhul.fyp.asecav.libreav.activities;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -44,9 +44,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.rhul.fyp.interimsuite.libreav.scanners.ApkScanner;
-import com.rhul.fyp.interimsuite.libreav.services.RealTimeService;
-import com.rhul.fyp.interimsuite.libreav.settings.SettingsActivity;
+import com.rhul.fyp.asecav.libreav.scanners.ApkScanner;
+import com.rhul.fyp.asecav.libreav.services.RealTimeService;
+import com.rhul.fyp.asecav.libreav.settings.SettingsActivity;
 
 import com.github.angads25.filepicker.model.DialogConfigs;
 import com.github.angads25.filepicker.model.DialogProperties;
@@ -55,9 +55,9 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
 
-import com.rhul.fyp.interimsuite.R;
+import com.rhul.fyp.asecav.R;
 
-import static com.rhul.fyp.interimsuite.libreav.helper.ThemeToggleHelper.toggleDarkMode;
+import static com.rhul.fyp.asecav.libreav.helper.ThemeToggleHelper.toggleDarkMode;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SharedPreferences.OnSharedPreferenceChangeListener {

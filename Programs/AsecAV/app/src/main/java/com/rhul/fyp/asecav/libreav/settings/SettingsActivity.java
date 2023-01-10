@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.settings;
+package com.rhul.fyp.asecav.libreav.settings;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -26,7 +26,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
-import com.rhul.fyp.interimsuite.R;
+import com.rhul.fyp.asecav.R;
 
 public class SettingsActivity extends AppCompatActivity {
     @Override

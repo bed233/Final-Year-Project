@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.activities;
+package com.rhul.fyp.asecav.libreav.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,9 +30,9 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.adapters.AppsAdapter;
-import com.rhul.fyp.interimsuite.libreav.data.AppInfo;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.adapters.AppsAdapter;
+import com.rhul.fyp.asecav.libreav.data.AppInfo;
 
 import java.util.ArrayList;
 

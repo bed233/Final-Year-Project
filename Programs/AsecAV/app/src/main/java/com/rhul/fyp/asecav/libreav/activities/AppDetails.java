@@ -1,6 +1,6 @@
-package com.rhul.fyp.interimsuite.libreav.activities;
+package com.rhul.fyp.asecav.libreav.activities;
 
-import static com.rhul.fyp.interimsuite.libreav.helper.ThemeToggleHelper.toggleDarkMode;
+import static com.rhul.fyp.asecav.libreav.helper.ThemeToggleHelper.toggleDarkMode;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,9 +21,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.adapters.ScanResultAdapter;
-import com.rhul.fyp.interimsuite.libreav.utils.AppConstants;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.adapters.ScanResultAdapter;
+import com.rhul.fyp.asecav.libreav.utils.AppConstants;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

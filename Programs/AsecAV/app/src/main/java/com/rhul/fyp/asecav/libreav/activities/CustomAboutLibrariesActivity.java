@@ -1,10 +1,10 @@
-package com.rhul.fyp.interimsuite.libreav.activities;
+package com.rhul.fyp.asecav.libreav.activities;
 
 import android.os.Bundle;
 
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.aboutlibraries.ui.LibsActivity;
-import com.rhul.fyp.interimsuite.R;
+import com.rhul.fyp.asecav.R;
 
 public class CustomAboutLibrariesActivity extends LibsActivity {
     @Override

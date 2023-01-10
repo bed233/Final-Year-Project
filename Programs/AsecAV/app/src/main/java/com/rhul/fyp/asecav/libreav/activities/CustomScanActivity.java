@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite.libreav.activities;
+package com.rhul.fyp.asecav.libreav.activities;
 
 import android.app.ProgressDialog;
 import android.content.pm.ApplicationInfo;
@@ -14,8 +14,8 @@ import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhul.fyp.interimsuite.R;
-import com.rhul.fyp.interimsuite.libreav.adapters.AppsListAdapter;
+import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.libreav.adapters.AppsListAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;

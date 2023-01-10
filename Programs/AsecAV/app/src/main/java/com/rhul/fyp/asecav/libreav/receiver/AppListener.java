@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.receiver;
+package com.rhul.fyp.asecav.libreav.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -24,7 +24,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.rhul.fyp.interimsuite.libreav.scanners.AppScanner;
+import com.rhul.fyp.asecav.libreav.scanners.AppScanner;
 
 public class AppListener extends BroadcastReceiver {
     /**

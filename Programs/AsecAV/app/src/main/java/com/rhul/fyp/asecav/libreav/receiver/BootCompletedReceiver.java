@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.rhul.fyp.interimsuite.libreav.receiver;
+package com.rhul.fyp.asecav.libreav.receiver;
 
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
@@ -26,7 +26,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
 
-import com.rhul.fyp.interimsuite.libreav.services.RealTimeService;
+import com.rhul.fyp.asecav.libreav.services.RealTimeService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     SharedPreferences sharedPreferences;

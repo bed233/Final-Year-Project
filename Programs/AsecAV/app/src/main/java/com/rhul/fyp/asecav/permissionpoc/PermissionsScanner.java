@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite.permissionpoc;
+package com.rhul.fyp.asecav.permissionpoc;
 
 import android.app.Activity;
 import android.content.Context;

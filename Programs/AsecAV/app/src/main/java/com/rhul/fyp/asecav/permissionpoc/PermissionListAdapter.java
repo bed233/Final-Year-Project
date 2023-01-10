@@ -1,4 +1,4 @@
-package com.rhul.fyp.interimsuite.permissionpoc;
+package com.rhul.fyp.asecav.permissionpoc;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rhul.fyp.interimsuite.R;
+import com.rhul.fyp.asecav.R;
 
 import java.util.ArrayList;
 
