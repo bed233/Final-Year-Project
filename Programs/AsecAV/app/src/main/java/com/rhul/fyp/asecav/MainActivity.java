@@ -20,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
         final Button fileScan = findViewById(R.id.fileScan);
         final Button appScan = findViewById(R.id.appScan);
         final Button permissionManager = findViewById(R.id.permissionManager);
+        final Button maxLock = findViewById(R.id.appLocker);
+        maxLock.setOnClickListener(view -> {
+            finish();
+            startActivity(new Intent(com.rhul.fyp.asecav.MainActivity.this,
+                    com.rhul.fyp.asecav.maxlock.ui.SettingsActivity.class));
+        });
         fileScan.setOnClickListener(view -> {
             finish();
             startActivity(new Intent(com.rhul.fyp.asecav.MainActivity.this,
