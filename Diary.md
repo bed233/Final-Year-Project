@@ -92,3 +92,6 @@ Realised that I forgot to actually push my Interim Submission and AppLockPOC to 
 
 ## 09/01/2022
 Have continued to learn Google Flutter since last entry. Have now Gotten Maxlock to a state where it can be merged with the rest of the modules without causing any issues. Also modified MaxLock in order to allow it to be compatible with Android 5 and up instead of android 6.1 and above. Will Finish Merging modules into 1 app tommorow and then full focus on UI.
+
+## 10/01/2022
+Have successfully merged all modules into 1 app with a basic menu to navigate between them. Have tested this with Android versions ranging from Android 5 to 13. Am going to add OnBackPressed functions before merging branch just to make navigating back to the main menu possible as well as change colours back to the intended colours rather than red. Still considering whether to commit to Flutter or not and am hoping to make decision by end of the week. I would only use Flutter for the main menu however it might be easier to use standard Android UI methods in order to keep everything consistent.
