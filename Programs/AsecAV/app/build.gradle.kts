@@ -5,14 +5,15 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     //id("com.jakewharton.hugo")
+    id("com.mikepenz.aboutlibraries.plugin")
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(33)
     defaultConfig {
         applicationId = "com.rhul.fyp.asecav"
         minSdkVersion(21)
-        targetSdkVersion(29)
+        targetSdkVersion(30)
         versionCode = 58
         versionName = "8.0-indev"
         resConfigs(*Config.languages)
@@ -62,6 +63,12 @@ android {
         isExperimental = true
     }
     registerTransform(AndroidHiddenTransform())
+    buildFeatures {
+        viewBinding = true
+    }
+    aaptOptions {
+        noCompress("tflite")
+    }
 }
 
 repositories {
@@ -71,7 +78,33 @@ repositories {
 }
 
 dependencies {
+
+    //Other Modules
+//    implementation("androidx.appcompat:appcompat:1.5.1")
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("androidx.preference:preference:1.1.0")
+    implementation ("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
+    androidTestImplementation ("androidx.test.ext:junit:1.1.4")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("org.tensorflow:tensorflow-lite:2.10.0")
+    testImplementation ("junit:junit:4.13.2")
+    implementation ("com.mikepenz:aboutlibraries:8.5.0")
+    implementation ("com.github.nekocode:Badge:2.1")
+    implementation ("com.github.angads25:filepicker:1.1.1")
+    implementation ("net.dongliu:apk-parser:2.6.10")
+//    implementation ("androidx.appcompat:appcompat:1.5.1")
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+//    implementation ("androidx.navigation:navigation-fragment:2.5.3")
+//    implementation ("androidx.navigation:navigation-ui:2.5.3")
+    implementation ("androidx.navigation:navigation-fragment:2.3.0")
+    implementation ("androidx.navigation:navigation-ui:2.3.0")
+    testImplementation ("junit:junit:4.13.2")
+    androidTestImplementation ("androidx.test.ext:junit:1.1.4")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
+
     // Kotlin stdlib & coroutines
+    implementation (fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Config.kotlinVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2-1.3.60")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0")
