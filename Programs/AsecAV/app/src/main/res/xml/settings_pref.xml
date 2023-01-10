@@ -58,8 +58,8 @@
             app:iconSpaceReserved="false">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetClass="tech.projectmatris.antimalwareapp.activities.CustomAboutLibrariesActivity"
-                android:targetPackage="tech.projectmatris.antimalwareapp" />
+                android:targetClass="com.rhul.fyp.asecav.libreav.activities.CustomAboutLibrariesActivity"
+                android:targetPackage="com.rhul.fyp.asecav" />
         </Preference>
         <Preference
             android:summary="@string/app_version"
