@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MaxLock</string>
+    <string name="app_name">AsecAV</string>
     <string name="name_pro"> Pro</string>
     <string name="name_pseudo_pro"> PseudoPro</string>
     <string name="placeholder">Placeholder</string>
