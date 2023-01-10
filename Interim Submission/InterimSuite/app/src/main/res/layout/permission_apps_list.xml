@@ -11,6 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        android:background="@color/material_dynamic_primary80"/>
+        android:background="@color/light_blue"/>
 
 </RelativeLayout>

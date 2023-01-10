@@ -154,4 +154,5 @@
     <string name="sponsor">Sponsor</string>
     <string name="AppLocker">App Locker</string>
     <string name="PermissionManager">Permission Manager</string>
+    <string name="app_version">1.0</string>
 </resources>
