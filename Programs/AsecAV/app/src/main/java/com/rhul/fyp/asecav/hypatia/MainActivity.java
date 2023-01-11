@@ -296,4 +296,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, com.rhul.fyp.asecav.MainActivity.class));
+    }
 }
