@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             finishAffinity();
-            super.onBackPressed();
+            startActivity(new Intent(this, com.rhul.fyp.asecav.MainActivity.class));
         }
     }
 
