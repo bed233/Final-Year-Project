@@ -23,6 +23,8 @@ import android.content.Intent
 
 class HiddenSettingsReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        context.startActivity(Intent(context, SettingsActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        context.startActivity(Intent(context, com.rhul.fyp.asecav.maxlock.ui.SettingsActivity::class.java).addFlags(Intent
+            .FLAG_ACTIVITY_NEW_TASK))//12/01/2023 zjac078 Fixing which package T9 dial code
+    // points to and tries to open
     }
 }
