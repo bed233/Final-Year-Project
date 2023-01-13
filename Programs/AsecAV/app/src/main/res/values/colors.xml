@@ -2,7 +2,7 @@
 <resources>
     <!-- App colors -->
     <color name="primary_red">#e51c23</color>
-    <color name="primary_red_dark">#d01716</color>
+    <color name="colorPrimary_dark">#d01716</color>
     <color name="accent">#ff9100</color>
     <color name="windowBackground">@android:color/white</color>
     <color name="windowBackgroundDark">@color/material_grey_850</color>
@@ -20,7 +20,7 @@
 
     <!-- Others -->
     <color name="success">#4caf50</color>
-    <color name="error">@color/primary_red</color>
+    <color name="error">@color/colorPrimary</color>
 
     <!-- Other Modules -->
     <color name="colorPrimary">#003D7A</color>
