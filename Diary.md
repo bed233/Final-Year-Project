@@ -90,5 +90,17 @@ Completed majorirty of Proof Of Concept merging and completed report and demo vi
 ## 22/12/2022
 Realised that I forgot to actually push my Interim Submission and AppLockPOC to the Gitlab so have done that. Over the past few days I have been looking into potentially using Google Flutter in order to create my UI to see if this would make the creation process any quicker and make the UI look more seamless and clean.
 
-## 09/01/2022
+## 09/01/2023
 Have continued to learn Google Flutter since last entry. Have now Gotten Maxlock to a state where it can be merged with the rest of the modules without causing any issues. Also modified MaxLock in order to allow it to be compatible with Android 5 and up instead of android 6.1 and above. Will Finish Merging modules into 1 app tommorow and then full focus on UI.
+
+## 10/01/2023
+Have successfully merged all modules into 1 app with a basic menu to navigate between them. Have tested this with Android versions ranging from Android 5 to 13. Am going to add OnBackPressed functions before merging branch just to make navigating back to the main menu possible as well as change colours back to the intended colours rather than red. Still considering whether to commit to Flutter or not and am hoping to make decision by end of the week. I would only use Flutter for the main menu however it might be easier to use standard Android UI methods in order to keep everything consistent.
+
+## 12/01/2023
+Have fixed bug where pressing backspace from any of the home pages of each module to allow it to work.
+
+## 14/01/2023
+Been researching into how I can implement a way for the user to pick which folders they want Hypatia to scan rather than have Hypatia scan all the files on the device which takes a lot of time and battery power on the device which is an issue I ran into when testing Hypatia on my own personal device full of files rather than on the relatively empty emulator.
+
+## 15/01/2023
+Debugging Hypatia in order to find out where I could modify which folders for the scanner to include in it's scope. This is determined in it's main Activity where I can modify it to select specific folders. Still researching into how a user can select folders to scan but until then considering changing scope to include specific folders most likely to store downloaded files from the browser such as the Downloads and Documents Folder.

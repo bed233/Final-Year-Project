@@ -50,6 +50,7 @@ import androidx.lifecycle.ViewModelProviders;
 import java.util.Arrays;
 
 import com.rhul.fyp.asecav.BuildConfig;
+import com.rhul.fyp.asecav.MainActivity;
 import com.rhul.fyp.asecav.maxlock.Common;
 import com.rhul.fyp.asecav.R;
 import com.rhul.fyp.asecav.maxlock.ui.firstStart.FirstStartActivity;
@@ -186,7 +187,7 @@ public class SettingsActivity extends AppCompatActivity implements Authenticatio
                 @SuppressWarnings("deprecation") CustomTabsIntent intent = new CustomTabsIntent.Builder(ctSession)
                         .setShowTitle(true)
                         .enableUrlBarHiding()
-                        .setToolbarColor(getResources().getColor(R.color.primary_red))
+                        .setToolbarColor(getResources().getColor(R.color.colorPrimary))
                         .build();
                 intent.launchUrl(this, Common.WEBSITE_URI);
                 return true;
@@ -205,7 +206,7 @@ public class SettingsActivity extends AppCompatActivity implements Authenticatio
                 secondFragmentContainer.setVisibility(View.GONE);
             getSupportFragmentManager().popBackStack();
         } else {
-            super.onBackPressed();
+            startActivity(new Intent(this, MainActivity.class));
         }
     }
 

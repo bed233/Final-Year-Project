@@ -136,7 +136,7 @@ class SettingsActivity : AppCompatActivity(),
 
     private fun setupWindow(showWallpaper: Boolean) {
         window.setFlags(if (showWallpaper) FLAG_SHOW_WALLPAPER else 0, FLAG_SHOW_WALLPAPER)
-        window.statusBarColor = if (showWallpaper) Color.TRANSPARENT else getColorCompat(R.color.primary_red_dark)
+        window.statusBarColor = if (showWallpaper) Color.TRANSPARENT else getColorCompat(R.color.colorPrimaryDark)
         if (showWallpaper) {
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
                 window.decorView.apply {
@@ -185,7 +185,7 @@ class SettingsActivity : AppCompatActivity(),
                 val intent = CustomTabsIntent.Builder(ctSession)
                         .setShowTitle(true)
                         .enableUrlBarHiding()
-                        .setToolbarColor(ContextCompat.getColor(this, R.color.primary_red))
+                        .setToolbarColor(ContextCompat.getColor(this, R.color.colorPrimary))
                         .build()
                 intent.launchUrl(this, Common.WEBSITE_URI)
                 return true
