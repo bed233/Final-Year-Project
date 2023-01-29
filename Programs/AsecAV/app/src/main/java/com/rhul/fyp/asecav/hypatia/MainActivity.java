@@ -110,7 +110,11 @@ public class MainActivity extends AppCompatActivity {
     public final boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.hypatia_menu_main, menu);
         menu.findItem(R.id.toggleRealtime).setChecked(Utils.isServiceRunning(MalwareScannerService.class, this));
-        menu.findItem(R.id.toggleOnionRouting).setChecked(prefs.getBoolean("ONION_ROUTING", false));
+        if(!Utils.isOrbotInstalled(this)){
+            menu.findItem(R.id.toggleOnionRouting).setVisible(false);
+        }else{
+            menu.findItem(R.id.toggleOnionRouting).setChecked(prefs.getBoolean("ONION_ROUTING", false));
+        }
         return true;
     }
 
