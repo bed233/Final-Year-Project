@@ -109,8 +109,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public final boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.hypatia_menu_main, menu);
+        menu.findItem(R.id.mnuDatabaseServer).setVisible(false);//zjac078 29/01/2023 Remove
+        // unnecessary options from menu.
         menu.findItem(R.id.toggleRealtime).setChecked(Utils.isServiceRunning(MalwareScannerService.class, this));
-        if(!Utils.isOrbotInstalled(this)){
+        if(!Utils.isOrbotInstalled(this)){ //zjac078 29/01/2023 Only show option to use Tor if
+            // tor Installed.
             menu.findItem(R.id.toggleOnionRouting).setVisible(false);
         }else{
             menu.findItem(R.id.toggleOnionRouting).setChecked(prefs.getBoolean("ONION_ROUTING", false));
