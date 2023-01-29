@@ -112,17 +112,18 @@ public class MainActivity extends AppCompatActivity {
         menu.findItem(R.id.mnuDatabaseServer).setVisible(false);//zjac078 29/01/2023 Remove
         // unnecessary options from menu.
         menu.findItem(R.id.toggleRealtime).setChecked(Utils.isServiceRunning(MalwareScannerService.class, this));
-        if(!Utils.isOrbotInstalled(this)){ //zjac078 29/01/2023 Only show option to use Tor if
+        if (!Utils.isOrbotInstalled(this)) { //zjac078 29/01/2023 Only show option to use Tor if
             // tor Installed.
             menu.findItem(R.id.toggleOnionRouting).setVisible(false);
-        }else{
+        } else {
             menu.findItem(R.id.toggleOnionRouting).setChecked(prefs.getBoolean("ONION_ROUTING", false));
         }
         return true;
     }
 
     /**
-     * Checks whether the app has the required permissions and then requests permission from user if not.
+     * Checks whether the app has the required permissions and then requests permission from user if
+     * not.
      */
     private void requestPermissions() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -142,32 +143,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String localizeDBDescription(String desc) {
-        return desc
-                .replaceAll("AUTHOR", getString(R.string.db_desc_author))
-                .replaceAll("LICENSE", getString(R.string.db_desc_license))
-                .replaceAll("SIZE_SMALL", getString(R.string.db_desc_size_small))
-                .replaceAll("SIZE_MEDIUM", getString(R.string.db_desc_size_medium))
-                .replaceAll("SIZE_LARGE", getString(R.string.db_desc_size_large))
-                .replaceAll("SIZE", getString(R.string.db_desc_size))
-                .replaceAll("SOURCE", getString(R.string.db_desc_source));
+        return desc.replaceAll("AUTHOR", getString(R.string.db_desc_author)).replaceAll("LICENSE", getString(R.string.db_desc_license)).replaceAll("SIZE_SMALL", getString(R.string.db_desc_size_small)).replaceAll("SIZE_MEDIUM", getString(R.string.db_desc_size_medium)).replaceAll("SIZE_LARGE", getString(R.string.db_desc_size_large)).replaceAll("SIZE", getString(R.string.db_desc_size)).replaceAll("SOURCE", getString(R.string.db_desc_source));
     }
 
     /**
-     * Allows user to select which databases they would like to have installed on their device/which the app should use.
+     * Allows user to select which databases they would like to have installed on their device/which
+     * the app should use.
      */
     private void selectDatabases() {
-        final String[] databases = {
-                localizeDBDescription("ClamAV: Android Only\n • SIZE: SIZE_MEDIUM\n • LICENSE: GPL-2.0\n • AUTHOR: Cisco\n • SOURCE: https://clamav.net\n"),
-                localizeDBDescription("ClamAV: Main\n • SIZE: SIZE_LARGE\n • LICENSE: GPL-2.0\n • AUTHOR: Cisco\n • SOURCE: https://clamav.net\n"),
-                localizeDBDescription("ClamAV: Daily\n • SIZE: SIZE_LARGE\n • LICENSE: GPL-2.0\n • AUTHOR: Cisco\n • SOURCE: https://clamav.net\n"),
-                localizeDBDescription("ESET\n • SIZE: SIZE_SMALL\n • LICENSE: BSD 2-Clause\n • AUTHOR: ESET\n • SOURCE: https://github.com/eset/malware-ioc\n"),
-                localizeDBDescription("Targeted Threats\n • SIZE: SIZE_SMALL\n • LICENSE: CC BY-SA 4.0\n • AUTHOR: Nex\n • SOURCE: https://github.com/botherder/targetedthreats")};
-        final boolean[] databaseDefaults = {
-                prefs.getBoolean("SIGNATURES_CLAMAV-ANDROID", true),
-                prefs.getBoolean("SIGNATURES_CLAMAV-MAIN", false),
-                prefs.getBoolean("SIGNATURES_CLAMAV-DAILY", false),
-                prefs.getBoolean("SIGNATURES_ESET", true),
-                prefs.getBoolean("SIGNATURES_TARGETEDTHREATS", true)};
+        final String[] databases = {localizeDBDescription("ClamAV: Android Only\n • SIZE: SIZE_MEDIUM\n • LICENSE: GPL-2.0\n • AUTHOR: Cisco\n • SOURCE: https://clamav.net\n"), localizeDBDescription("ClamAV: Main\n • SIZE: SIZE_LARGE\n • LICENSE: GPL-2.0\n • AUTHOR: Cisco\n • SOURCE: https://clamav.net\n"), localizeDBDescription("ClamAV: Daily\n • SIZE: SIZE_LARGE\n • LICENSE: GPL-2.0\n • AUTHOR: Cisco\n • SOURCE: https://clamav.net\n"), localizeDBDescription("ESET\n • SIZE: SIZE_SMALL\n • LICENSE: BSD 2-Clause\n • AUTHOR: ESET\n • SOURCE: https://github.com/eset/malware-ioc\n"), localizeDBDescription("Targeted Threats\n • SIZE: SIZE_SMALL\n • LICENSE: CC BY-SA 4.0\n • AUTHOR: Nex\n • SOURCE: https://github.com/botherder/targetedthreats")};
+        final boolean[] databaseDefaults = {prefs.getBoolean("SIGNATURES_CLAMAV-ANDROID", true), prefs.getBoolean("SIGNATURES_CLAMAV-MAIN", false), prefs.getBoolean("SIGNATURES_CLAMAV-DAILY", false), prefs.getBoolean("SIGNATURES_ESET", true), prefs.getBoolean("SIGNATURES_TARGETEDTHREATS", true)};
 
         Dialog databaseDialog;
         AlertDialog.Builder databaseBuilder = new AlertDialog.Builder(this);
@@ -184,6 +169,29 @@ public class MainActivity extends AppCompatActivity {
 
         databaseDialog = databaseBuilder.create();
         databaseDialog.show();
+    }
+
+    private void selectFolders() {
+        final String[] folders = {"Documents", "Downloads", "Music", "Pictures", "Movies", "Recordings"};
+
+        final boolean[] folderDefaults = {prefs.getBoolean("Documents", true), prefs.getBoolean("Downloads", true), prefs.getBoolean("Music", true), prefs.getBoolean("Pictures", false), prefs.getBoolean("Movies", false), prefs.getBoolean("Recordings", false)};
+
+        Dialog foldersDialog;
+        AlertDialog.Builder foldersBuilder = new AlertDialog.Builder(this);
+        foldersBuilder.setTitle(R.string.lblSelectFoldersTitle);
+
+        foldersBuilder.setMultiChoiceItems(folders, folderDefaults, ((dialog, i, selected) -> folderDefaults[i] = selected));
+        foldersBuilder.setPositiveButton("OK", (dialog, i) -> {
+            prefs.edit().putBoolean("Documents", folderDefaults[0]).apply();
+            prefs.edit().putBoolean("Downloads", folderDefaults[1]).apply();
+            prefs.edit().putBoolean("Music", folderDefaults[2]).apply();
+            prefs.edit().putBoolean("Pictures", folderDefaults[3]).apply();
+            prefs.edit().putBoolean("Movies", folderDefaults[4]).apply();
+            prefs.edit().putBoolean("Recordings", folderDefaults[4]).apply();
+        });
+
+        foldersDialog = foldersBuilder.create();
+        foldersDialog.show();
     }
 
     @Override
@@ -225,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String newServer = input.getText().toString();
-                        if(!newServer.endsWith("/")) {
+                        if (!newServer.endsWith("/")) {
                             newServer += "/";
                         }
                         prefs.edit().putString("DATABASE_SERVER", newServer).apply();
