@@ -172,9 +172,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectFolders() {
-        final String[] folders = {"Documents", "Downloads", "Music", "Pictures", "Movies", "Recordings"};
+        final String[] folders = {"System", "Apps","Documents", "Downloads", "Music", "Pictures", "Movies",
+                "Recordings"};
 
-        final boolean[] folderDefaults = {prefs.getBoolean("Documents", true), prefs.getBoolean("Downloads", true), prefs.getBoolean("Music", true), prefs.getBoolean("Pictures", false), prefs.getBoolean("Movies", false), prefs.getBoolean("Recordings", false)};
+        final boolean[] folderDefaults = {prefs.getBoolean("System", false),prefs.getBoolean("Apps",
+                false),
+                prefs.getBoolean(
+                "Documents", true),
+                prefs.getBoolean("Downloads", true), prefs.getBoolean("Music", true), prefs.getBoolean("Pictures", false), prefs.getBoolean("Movies", false), prefs.getBoolean("Recordings", false)};
 
         Dialog foldersDialog;
         AlertDialog.Builder foldersBuilder = new AlertDialog.Builder(this);
@@ -182,12 +187,14 @@ public class MainActivity extends AppCompatActivity {
 
         foldersBuilder.setMultiChoiceItems(folders, folderDefaults, ((dialog, i, selected) -> folderDefaults[i] = selected));
         foldersBuilder.setPositiveButton("OK", (dialog, i) -> {
-            prefs.edit().putBoolean("Documents", folderDefaults[0]).apply();
-            prefs.edit().putBoolean("Downloads", folderDefaults[1]).apply();
-            prefs.edit().putBoolean("Music", folderDefaults[2]).apply();
-            prefs.edit().putBoolean("Pictures", folderDefaults[3]).apply();
-            prefs.edit().putBoolean("Movies", folderDefaults[4]).apply();
-            prefs.edit().putBoolean("Recordings", folderDefaults[4]).apply();
+            prefs.edit().putBoolean("System", folderDefaults[0]).apply();
+            prefs.edit().putBoolean("Apps", folderDefaults[1]).apply();
+            prefs.edit().putBoolean("Documents", folderDefaults[2]).apply();
+            prefs.edit().putBoolean("Downloads", folderDefaults[3]).apply();
+            prefs.edit().putBoolean("Music", folderDefaults[4]).apply();
+            prefs.edit().putBoolean("Pictures", folderDefaults[5]).apply();
+            prefs.edit().putBoolean("Movies", folderDefaults[6]).apply();
+            prefs.edit().putBoolean("Recordings", folderDefaults[7]).apply();
         });
 
         foldersDialog = foldersBuilder.create();
@@ -222,32 +229,35 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mnuSelectDatabases:
                 selectDatabases();
                 break;
-            case R.id.mnuDatabaseServer:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle(getString(R.string.lblDatabaseServer));
-                final EditText input = new EditText(this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                input.setText(Utils.getDatabaseURL(this));
-                builder.setView(input);
-                builder.setPositiveButton(getString(R.string.lblOverride), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String newServer = input.getText().toString();
-                        if (!newServer.endsWith("/")) {
-                            newServer += "/";
-                        }
-                        prefs.edit().putString("DATABASE_SERVER", newServer).apply();
-                    }
-                });
-                builder.setNegativeButton(getString(R.string.lblReset), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        prefs.edit().putString("DATABASE_SERVER", Utils.DATABASE_URL_DEFAULT).apply();
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
+            case R.id.mnuSelectFolders:
+                selectFolders();
                 break;
+//            case R.id.mnuDatabaseServer:
+//                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//                builder.setTitle(getString(R.string.lblDatabaseServer));
+//                final EditText input = new EditText(this);
+//                input.setInputType(InputType.TYPE_CLASS_TEXT);
+//                input.setText(Utils.getDatabaseURL(this));
+//                builder.setView(input);
+//                builder.setPositiveButton(getString(R.string.lblOverride), new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        String newServer = input.getText().toString();
+//                        if (!newServer.endsWith("/")) {
+//                            newServer += "/";
+//                        }
+//                        prefs.edit().putString("DATABASE_SERVER", newServer).apply();
+//                    }
+//                });
+//                builder.setNegativeButton(getString(R.string.lblReset), new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        prefs.edit().putString("DATABASE_SERVER", Utils.DATABASE_URL_DEFAULT).apply();
+//                        dialog.cancel();
+//                    }
+//                });
+//                builder.show();
+//                break;
             case R.id.toggleRealtime:
                 Intent realtimeScanner = new Intent(getApplicationContext(), MalwareScannerService.class);
                 if (!item.isChecked()) {
@@ -259,22 +269,23 @@ public class MainActivity extends AppCompatActivity {
                 }
                 item.setChecked(!item.isChecked());
                 break;
-            case R.id.mnuScanSystem:
-                scanSystem = !item.isChecked();
-                item.setChecked(scanSystem);
-                break;
-            case R.id.mnuScanApps:
-                scanApps = !item.isChecked();
-                item.setChecked(scanApps);
-                break;
-            case R.id.mnuScanInternal:
-                scanInternal = !item.isChecked();
-                item.setChecked(scanInternal);
-                break;
-            case R.id.mnuScanExternal:
-                scanExternal = !item.isChecked();
-                item.setChecked(scanExternal);
-                break;
+//            case R.id.mnuScanSystem:
+//                scanSystem = !item.isChecked();
+//                item.setChecked(scanSystem);
+//                break;
+//            case R.id.mnuScanApps:
+//                scanApps = !item.isChecked();
+//                item.setChecked(scanApps);
+//                break;
+
+//            case R.id.mnuScanInternal:
+//                scanInternal = !item.isChecked();
+//                item.setChecked(scanInternal);
+//                break;
+//            case R.id.mnuScanExternal:
+//                scanExternal = !item.isChecked();
+//                item.setChecked(scanExternal);
+//                break;
             case R.id.mnuFullCredits:
                 showCredits();
                 break;
