@@ -104,3 +104,12 @@ Been researching into how I can implement a way for the user to pick which folde
 
 ## 15/01/2023
 Debugging Hypatia in order to find out where I could modify which folders for the scanner to include in it's scope. This is determined in it's main Activity where I can modify it to select specific folders. Still researching into how a user can select folders to scan but until then considering changing scope to include specific folders most likely to store downloaded files from the browser such as the Downloads and Documents Folder.
+
+## 17/01/2023 -  22/01/2023
+Researched into various methods and libraries I could use in order to allow the user to select specific folders to scan on Hypatia.
+
+## 25/01/2023 - 29/01/2023
+Created Proof Of Concept's of verious selectors but was unable to figure out how to pass a list of folders back to app. Then realised that I was trying to over engineer the solution and could just create a simple alert dialog with a list of User Folders (Documents, Downloads...) within the app and simplify the process significantly and avoid the need for a new library.
+
+## 30/01/2023
+Completed Implementation of the above and Merged Branch into Main.
