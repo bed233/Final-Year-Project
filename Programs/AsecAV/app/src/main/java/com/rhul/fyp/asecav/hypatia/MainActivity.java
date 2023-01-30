@@ -171,18 +171,26 @@ public class MainActivity extends AppCompatActivity {
         databaseDialog.show();
     }
 
+    /**
+     * Author: zjac078 29/01/2023
+     * Select Folders method will create a Alert Dialog that will allow the user to select which
+     * folders they would like to be scanned in order to be speed up the process.
+     * Using Preferences to save the user selection between sessions
+     */
     private void selectFolders() {
-        final String[] folders = {"System", "Apps","Documents", "Downloads", "Music", "Pictures", "Movies",
-                "Recordings"};
-
-        final boolean[] folderDefaults = {prefs.getBoolean("System", false),prefs.getBoolean("Apps",
+        final String[] folders = {"System", "Apps", "Documents", "Downloads", "Music", "Pictures", "Movies",
+                "Recordings"}; //Setting the string representation for each folder
+        final boolean[] folderDefaults = {prefs.getBoolean("System", false), prefs.getBoolean("Apps",
                 false),
                 prefs.getBoolean(
-                "Documents", true),
-                prefs.getBoolean("Downloads", true), prefs.getBoolean("Music", true), prefs.getBoolean("Pictures", false), prefs.getBoolean("Movies", false), prefs.getBoolean("Recordings", false)};
+                        "Documents", true),
+                prefs.getBoolean("Downloads", true), prefs.getBoolean("Music", true),
+                prefs.getBoolean("Pictures", false), prefs.getBoolean("Movies", false),
+                prefs.getBoolean("Recordings", false)}; //Setting Defaults and saving to preferences
 
         Dialog foldersDialog;
-        AlertDialog.Builder foldersBuilder = new AlertDialog.Builder(this);
+        AlertDialog.Builder foldersBuilder = new AlertDialog.Builder(this);//Creating new
+        // AlertDialog
         foldersBuilder.setTitle(R.string.lblSelectFoldersTitle);
 
         foldersBuilder.setMultiChoiceItems(folders, folderDefaults, ((dialog, i, selected) -> folderDefaults[i] = selected));
@@ -195,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             prefs.edit().putBoolean("Pictures", folderDefaults[5]).apply();
             prefs.edit().putBoolean("Movies", folderDefaults[6]).apply();
             prefs.edit().putBoolean("Recordings", folderDefaults[7]).apply();
-        });
+        });//Populating Dialogue and updating selections with user selections.
 
         foldersDialog = foldersBuilder.create();
         foldersDialog.show();
@@ -297,19 +305,46 @@ public class MainActivity extends AppCompatActivity {
         malwareScanner = new MalwareScanner(this, this, true);
         malwareScanner.running = true;
         HashSet<File> filesToScan = new HashSet<>();
-        if (scanSystem) {
+//        if (scanSystem) {
+//            filesToScan.add(Environment.getRootDirectory());
+//        }
+//        if (scanApps) {
+//            for (ApplicationInfo packageInfo : getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA)) {
+//                filesToScan.add(new File(packageInfo.sourceDir));
+//            }
+//        }
+//        if (scanInternal) {
+//            filesToScan.add(Environment.getExternalStorageDirectory());
+//        }
+//        if (scanExternal) {
+//            filesToScan.add(new File("/storage"));
+//        }
+        if (prefs.getBoolean("System", false)) {
             filesToScan.add(Environment.getRootDirectory());
         }
-        if (scanApps) {
+        if (prefs.getBoolean("Apps", false)) {
             for (ApplicationInfo packageInfo : getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA)) {
                 filesToScan.add(new File(packageInfo.sourceDir));
             }
         }
-        if (scanInternal) {
-            filesToScan.add(Environment.getExternalStorageDirectory());
+        if (prefs.getBoolean("Documents", false)) {
+            filesToScan.add(new File("/storage/emulated/0/Documents"));
         }
-        if (scanExternal) {
-            filesToScan.add(new File("/storage"));
+        if (prefs.getBoolean("Downloads", false)) {
+            filesToScan.add(new File("/storage/emulated/0/Downloads"));
+        }
+        if (prefs.getBoolean("Music", false)) {
+            filesToScan.add(new File("/storage/emulated/0/Music"));
+        }
+        if (prefs.getBoolean("Pictures", false)) {
+            filesToScan.add(new File("/storage/emulated/0/Pictures"));
+            filesToScan.add(new File("/storage/emulated/0/DCIM"));
+        }
+        if (prefs.getBoolean("Movies", false)) {
+            filesToScan.add(new File("/storage/emulated/0/Movies"));
+        }
+        if (prefs.getBoolean("Recordings", false)) {
+            filesToScan.add(new File("/storage/emulated/0/Recordings"));
         }
         malwareScanner.executeOnExecutor(Utils.getThreadPoolExecutor(), filesToScan);
     }
