@@ -24,13 +24,12 @@ import java.util.List;
 
 public class PermissionsScanner extends AsyncTask<Void, String, Void> {
     private final WeakReference<Context> contextRef;
-    private final WeakReference<Activity> activityRef;
 
     private final ArrayList<AppParcelInfo> scannedApps = new ArrayList<>();
 
     public PermissionsScanner(Context context, Activity activity) {
-        contextRef = new WeakReference<Context>(context);
-        this.activityRef = new WeakReference<>(activity);
+        contextRef = new WeakReference<>(context);
+        WeakReference<Activity> activityRef = new WeakReference<>(activity);
     }
 
     @Override
@@ -48,9 +47,7 @@ public class PermissionsScanner extends AsyncTask<Void, String, Void> {
                 continue;
             } else {
                 try{
-                    ArrayList<String> appPermissionsList =
-                            getListOfPermissions(contextRef.get().createPackageContext(info.packageName, 0));
-                    app.listOfPermissions = appPermissionsList;
+                    app.listOfPermissions = getListOfPermissions(contextRef.get().createPackageContext(info.packageName, 0));
                     scannedApps.add(app);
 
                 } catch (PackageManager.NameNotFoundException e) {
@@ -69,7 +66,7 @@ public class PermissionsScanner extends AsyncTask<Void, String, Void> {
     /**
      * Get the list of permissions used by the application
      * <p>
-     * Borrowed from: https://stackoverflow.com/questions/18236801 (Yousha Aleayoub)
+     * Borrowed from: <a href="https://stackoverflow.com/questions/18236801">...</a> (Yousha Aleayoub)
      */
     private static ArrayList<String> getListOfPermissions(final Context context) {
         ArrayList<String> arr = new ArrayList<>();
@@ -92,18 +89,10 @@ public class PermissionsScanner extends AsyncTask<Void, String, Void> {
                 eventType = xmlParser.next();
             }
             xmlParser.close();
-        } catch (final XmlPullParserException exception) {
+        } catch (final XmlPullParserException | PackageManager.NameNotFoundException | IOException |
+                       NoSuchMethodException | IllegalAccessException |
+                       InvocationTargetException exception) {
             exception.printStackTrace();
-        } catch (final PackageManager.NameNotFoundException exception) {
-            exception.printStackTrace();
-        } catch (final IOException exception) {
-            exception.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
         }
         return arr;
 
