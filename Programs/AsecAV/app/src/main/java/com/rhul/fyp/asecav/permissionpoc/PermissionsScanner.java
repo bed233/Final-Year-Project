@@ -23,8 +23,9 @@ import java.util.Date;
 import java.util.List;
 
 public class PermissionsScanner extends AsyncTask<Void, String, Void> {
-    private final WeakReference<Context> contextRef;
+    public final WeakReference<Context> contextRef;
 
+    public boolean finished = false;
     private final ArrayList<AppParcelInfo> scannedApps = new ArrayList<>();
 
     public PermissionsScanner(Context context, Activity activity) {
@@ -102,10 +103,14 @@ public class PermissionsScanner extends AsyncTask<Void, String, Void> {
     protected void onPostExecute(Void unused) {
         putDateInSharedPreference();
         ResultActivity.apps = scannedApps;
-        Intent resultScreen = new Intent(contextRef.get(), ResultActivity.class);
+        finished = true; //zjac078 02/02/2023  Have transferred responsibility of switching layout
+        // to Main
+        // Activity
+        // in order to start scanner from when app starts to avoid delay.
+//        Intent resultScreen = new Intent(contextRef.get(), ResultActivity.class);
 
 //        this.activityRef.get().finish();
-        contextRef.get().startActivity(resultScreen);
+//        contextRef.get().startActivity(resultScreen);
     }
 
 
