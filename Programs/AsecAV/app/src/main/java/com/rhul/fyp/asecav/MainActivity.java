@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                         Intent resultScreen = new Intent(scan.contextRef.get(), ResultActivity.class);
                         scan.contextRef.get().startActivity(resultScreen);                }
-                }, 600);
+                }, 800);
             }else{
                 finish();
                 Intent resultScreen = new Intent(scan.contextRef.get(), ResultActivity.class);
