@@ -104,13 +104,7 @@ public class PermissionsScanner extends AsyncTask<Void, String, Void> {
         putDateInSharedPreference();
         ResultActivity.apps = scannedApps;
         finished = true; //zjac078 02/02/2023  Have transferred responsibility of switching layout
-        // to Main
-        // Activity
-        // in order to start scanner from when app starts to avoid delay.
-//        Intent resultScreen = new Intent(contextRef.get(), ResultActivity.class);
-
-//        this.activityRef.get().finish();
-//        contextRef.get().startActivity(resultScreen);
+        // to Main Activity in order to start scanner from when app starts to avoid delay.
     }
 
 
