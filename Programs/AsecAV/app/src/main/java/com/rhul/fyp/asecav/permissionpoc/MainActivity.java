@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import com.rhul.fyp.asecav.R;
 
+/**
+ * Currently Redundant class for a button to trigger the scan however have moved this
+ * functionality to the main activity to avoid delay and increase seamless.
+ */
 public class MainActivity extends AppCompatActivity {
     Button scanButton;
 
