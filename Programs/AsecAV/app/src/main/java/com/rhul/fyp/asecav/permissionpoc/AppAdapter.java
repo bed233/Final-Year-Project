@@ -31,15 +31,19 @@ public class AppAdapter extends RecyclerView.Adapter {
         ImageView appIcon;
         TextView appLabel;
 
+        TextView packageLabel;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             appIcon = itemView.findViewById(R.id.appIcon);
             appLabel = itemView.findViewById(R.id.appLabel);
+            packageLabel = itemView.findViewById(R.id.appSecondLabel);
         }
 
         void setAppInfo(final AppParcelInfo appParcelInfo){
             appIcon.setImageDrawable(appParcelInfo.icon);
             appLabel.setText(appParcelInfo.name);
+            packageLabel.setText(appParcelInfo.pName);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

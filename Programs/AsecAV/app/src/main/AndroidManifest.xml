@@ -463,5 +463,5 @@
             android:name="xposedminversion"
             android:value="72" />
     </application>
-    <dist:module dist:instant ="true"></dist:module>
+    <dist:module dist:instant="true" />
 </manifest>
