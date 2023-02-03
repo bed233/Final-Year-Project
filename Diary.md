@@ -113,3 +113,6 @@ Created Proof Of Concept's of verious selectors but was unable to figure out how
 
 ## 30/01/2023
 Completed Implementation of the above and Merged Branch into Main.
+
+## 31/01/2023 - 02/02/2023
+Realised that my Permission manager scanner needed to be optimized as pressing the button on the main menu can lead to the app to crash due to the scanner not being able to finish in time. I have moved when the scanner starts to as soon as the app is ran on the device which has reduced the delay between the user interacting to the list being shown.
