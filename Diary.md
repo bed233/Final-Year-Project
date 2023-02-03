@@ -116,3 +116,6 @@ Completed Implementation of the above and Merged Branch into Main.
 
 ## 31/01/2023 - 02/02/2023
 Realised that my Permission manager scanner needed to be optimized as pressing the button on the main menu can lead to the app to crash due to the scanner not being able to finish in time. I have moved when the scanner starts to as soon as the app is ran on the device which has reduced the delay between the user interacting to the list being shown.
+
+## 03/02/2023
+Have begun working on the UI for the app and making the app look clean. Will start with the Permission Manager as it is currently easiest to modify in order to create a base theme. Have also begun using Figma which will with implementing Google's Material 3 design language.
