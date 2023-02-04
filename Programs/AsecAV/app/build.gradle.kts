@@ -117,7 +117,7 @@ dependencies {
     implementation("androidx.gridlayout:gridlayout:1.0.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("com.google.android.material:material:1.2.0-alpha02")
+    implementation("com.google.android.material:material:1.6.0")
     //-- KTX
     implementation("androidx.core:core-ktx:1.1.0")
     implementation("androidx.activity:activity-ktx:1.1.0-rc02")
