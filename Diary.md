@@ -124,3 +124,10 @@ Have begun working on the UI for the app and making the app look clean. Will sta
 Have realised that using Figma would of slowed down my development so have limited use to jus organising components rather than implementing Figma into Android Studio.
 
 ## 07/02/2023
+Created and added Toolbar to all aspects of the Permission Viewer to improve design. Redesigned the List page in order to make the list of apps look nicer and more understandable to look out
+
+## 08/02/2023
+Added a Back arrow to allow user to go back to main menu. Redesigned the App Details to make it easier to read for the user. Added a refresh button to the toolbar which allows the user to update their list of apps.
+
+## 09/02/2023
+Completed Branch for turning Permsision Viewer into Material UI. Have begun the same process on LibreAV
