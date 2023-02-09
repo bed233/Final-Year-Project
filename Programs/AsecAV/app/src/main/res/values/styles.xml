@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Application theme -->
-    <style name="AppTheme" parent="AppTheme.Base" />
+    <style name="AppTheme" parent="Theme.MaterialComponents" />
 
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Main app colors -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

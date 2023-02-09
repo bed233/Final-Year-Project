@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="us.spotco.malwarescanner.MainActivity">
+    tools:context="com.rhul.fyp.asecav.hypatia.MainActivity">
 
     <item
         android:id="@+id/toggleOnionRouting"

@@ -23,11 +23,11 @@
     <color name="error">@color/colorPrimary</color>
 
     <!-- Other Modules -->
-    <color name="colorPrimary">#003D7A</color>
-    <color name="colorPrimaryDark">#2D3142</color>
-    <color name="grey">#585661</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="light_blue">#03a9f4</color>
+    <color name="colorPrimary">#0072BB</color>
+    <color name="colorPrimaryDark">#111D4A</color>
+    <color name="grey">#25283D</color>
+    <color name="colorAccent">#45F0DF</color>
+    <color name="light_blue">#1E91D6</color>
     <color name="red">#f44336</color>
     <color name="black">#000000</color>
     <color name="progressBgColor">#03A9F4</color>

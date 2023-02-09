@@ -78,7 +78,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".permissionpoc.ResultActivity"/>
+        <activity android:name=".permissionpoc.ResultActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".permissionpoc.AppDetails"/>
         <activity
             android:name=".hypatia.MainActivity"
@@ -463,5 +465,5 @@
             android:name="xposedminversion"
             android:value="72" />
     </application>
-    <dist:module dist:instant ="true"></dist:module>
+    <dist:module dist:instant="true" />
 </manifest>

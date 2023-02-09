@@ -6,13 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/libreav_app_background">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/appCard"
+        style="@style/Widget.MaterialComponents.CardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginTop="1.5dp"
+        android:layout_marginBottom="1.5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
         android:focusable="true"
+        android:outlineSpotShadowColor="@color/black"
         android:foreground="?attr/selectableItemBackground"
         android:transitionName="appCardItem"
         app:cardCornerRadius="5dp"
@@ -25,7 +29,7 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/appIcon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -42,7 +46,7 @@
                 android:layout_weight="2"
                 android:orientation="vertical">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/appLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -52,19 +56,20 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/appSecondLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text=""
-                    android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#A5A5A5"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </FrameLayout>

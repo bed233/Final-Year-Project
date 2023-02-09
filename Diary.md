@@ -14,7 +14,7 @@ Found a couple of FOSS Anti-Malware for Android that I could potentially use for
 ## 13/10/2022
 Have Received guidance on how to implment Open Source Projects from Github into my Gitlab. 'forked' the 2 FOSS Anti-Malware for Android Applications into my gitlab and added them as a submodule of my main project folder. Added my supervisor and the organizers to both submodules to ensure everyone who needs access has access. Now that this has been completed, I am able to start looking through the FOSS apps and understand how they work and how I could adapt them to work in my security suite. I have now setup Android Studio and both apps in Android Studio and am able to run both sucessfully on a virtual android device running latest API of android. Now will go through each version of android to try and decide what is the earliest version of android I can work on whilst keeping everything compatible.
 
-## 16/1o/2022 
+## 16/10/2022
 Have Tested both FOSS implementations for Malware Detection on multiple version of Android and determined that LibreAV will run on Android 4.1 and above with Hypatia running at Android 5 and above. Using these findings, I will be aiming to use Android 5 for the remainder of my project. This will ensure that I am able to support 98.8% of Android Devices according to Google API Version Distribution Chart. Have also begun going through the code of the FOSS and commenting in order to help me understand the code as their are no comments in the code. This should be completed in the next couple days at most.
 
 ## 18/10/2022
@@ -113,3 +113,14 @@ Created Proof Of Concept's of verious selectors but was unable to figure out how
 
 ## 30/01/2023
 Completed Implementation of the above and Merged Branch into Main.
+
+## 31/01/2023 - 02/02/2023
+Realised that my Permission manager scanner needed to be optimized as pressing the button on the main menu can lead to the app to crash due to the scanner not being able to finish in time. I have moved when the scanner starts to as soon as the app is ran on the device which has reduced the delay between the user interacting to the list being shown.
+
+## 03/02/2023
+Have begun working on the UI for the app and making the app look clean. Will start with the Permission Manager as it is currently easiest to modify in order to create a base theme. Have also begun using Figma which will with implementing Google's Material 3 design language.
+
+## 05/02/2023
+Have realised that using Figma would of slowed down my development so have limited use to jus organising components rather than implementing Figma into Android Studio.
+
+## 07/02/2023
