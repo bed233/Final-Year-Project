@@ -90,7 +90,7 @@
             android:background="@drawable/rounded_button_right"
             android:clickable="true"
             android:focusable="true"
-            android:text="@string/PermissionManager"
+            android:text="@string/permission_viewer"
             android:textColor="@color/black"
             app:useCompatPadding="true"
             tools:ignore="TextContrastCheck" />
