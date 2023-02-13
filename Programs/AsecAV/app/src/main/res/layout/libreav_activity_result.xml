@@ -42,6 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
+                app:menu="@menu/permission_viewer_menu"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:navigationIcon="@drawable/round_arrow_back_24"/>
 
