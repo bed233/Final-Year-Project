@@ -131,3 +131,12 @@ Added a Back arrow to allow user to go back to main menu. Redesigned the App Det
 
 ## 09/02/2023
 Completed Branch for turning Permsision Viewer into Material UI. Have begun the same process on LibreAV
+
+## 10/02/2023 - 11/02/2023
+Completed desgining new LibreAV and begun implementing design into the app. Updated the Result List in order to match new design and be more material.
+
+## 12/02/2023
+Begun Modifying Toolbar in order to be more in line with rest of app and have modified Result list more to make Safety Classifications more obvious
+
+## 13/02/2023
+Completed Result list and Toolbar and have also modified the scan progress bar to match Google's material design Guidelines and look more consistenw tih the rest of the app.
