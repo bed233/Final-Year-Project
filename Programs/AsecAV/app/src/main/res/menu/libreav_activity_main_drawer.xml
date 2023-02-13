@@ -18,8 +18,7 @@
   -->
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <group android:id="@+id/nav_main_group"
         android:checkableBehavior="single">
@@ -32,9 +31,9 @@
             android:icon="@drawable/libreav_ic_menu_custom_scan_black"
             android:title="@string/custom_scan" />
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/libreRealTimeScan"
             android:icon="@drawable/libreav_ic_menu_settings_black"
-            android:title="@string/settings" />
+            android:title="@string/lblRealtimeScannerToggle" />
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/libreav_ic_menu_help_black"
