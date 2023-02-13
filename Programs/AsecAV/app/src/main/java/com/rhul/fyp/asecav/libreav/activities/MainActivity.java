@@ -38,6 +38,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.rhul.fyp.asecav.libreav.receiver.AppListener;
 import com.rhul.fyp.asecav.libreav.scanners.ApkScanner;
 import com.rhul.fyp.asecav.libreav.services.RealTimeService;
 import com.rhul.fyp.asecav.libreav.settings.SettingsActivity;
@@ -57,11 +59,12 @@ import com.google.android.material.navigation.NavigationView;
 import java.io.File;
 
 import com.rhul.fyp.asecav.R;
+import com.rhul.fyp.asecav.maxlock.util.Util;
 
 import static com.rhul.fyp.asecav.libreav.helper.ThemeToggleHelper.toggleDarkMode;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SharedPreferences.OnSharedPreferenceChangeListener {
+        implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     Button scanButton;
     TextView lastScanText;
@@ -107,8 +110,8 @@ public class MainActivity extends AppCompatActivity
 //        drawer.addDrawerListener(toggle);
 //        toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             if (!isServiceRunning(RealTimeService.class)) {
@@ -120,6 +123,30 @@ public class MainActivity extends AppCompatActivity
 
         scanButton = findViewById(R.id.scanButton);
         scanButton.setOnClickListener(v -> context.startActivity(new Intent(context, ScanActivity.class).putExtra("withSysApps", withSysApps)));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.libreav_activity_main_menu, menu);
+        menu.findItem(R.id.libreRealTimeScan).setChecked(AppListener.isServiceRunning(RealTimeService.class, this));
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.libreRealTimeScan:
+                break;
+            case R.id.nav_scan_apk:
+                break;
+            case R.id.nav_custom_scan:
+                break;
+            case R.id.nav_help:
+                break;
+            case R.id.nav_about:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -213,66 +240,66 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_scan_apk) {
-            DialogProperties properties = new DialogProperties();
-            properties.selection_mode = DialogConfigs.SINGLE_MODE;
-            properties.selection_type = DialogConfigs.FILE_SELECT;
-            properties.root = Environment.getExternalStorageDirectory();
-            properties.error_dir = properties.root;
-            properties.offset = properties.root;
-            properties.extensions = new String[]{"apk"};
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
-                try {
-                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                    intent.addCategory("android.intent.category.DEFAULT");
-                    intent.setData(Uri.parse(String.format("package:%s", getApplicationContext().getPackageName())));
-                    startActivityForResult(intent, 2296);
-                } catch (Exception e) {
-                    Intent intent = new Intent();
-                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    startActivityForResult(intent, 2296);
-                }
-            }
-
-            dialog = new FilePickerDialog(MainActivity.this, properties);
-            dialog.setTitle(this.getString(R.string.select_a_file));
-            dialog.setDialogSelectionListener(files -> {
-                //files is the array of the paths of files selected by the Application User.
-                if (files != null) {
-                    File selectedFile = new File(files[0]);
-                    if (selectedFile.exists() && selectedFile.isFile()) {
-                        final ApkScanner apkScanner = new ApkScanner(context, files[0]);
-                        apkScanner.execute();
-                        //Toast.makeText(context,files[0],Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(context, context.getString(R.string.file_does_not_exist), Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(context, context.getString(R.string.error_loading_file), Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            dialog.show();
-        } else if (id == R.id.nav_custom_scan) {
-            this.startActivity(new Intent(this, CustomScanActivity.class).putExtra("withSysApps", withSysApps));
-        } else if (id == R.id.libreRealTimeScan) {
-            this.startActivity(new Intent(this, SettingsActivity.class));
-        } else if (id == R.id.nav_help) {
-            this.startActivity(new Intent(this, HelpActivity.class));
-        } else if (id == R.id.nav_about) {
-            this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://projectmatris.tech")));
-        }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handle navigation view item clicks here.
+//        int id = item.getItemId();
+//
+//        if (id == R.id.nav_scan_apk) {
+//            DialogProperties properties = new DialogProperties();
+//            properties.selection_mode = DialogConfigs.SINGLE_MODE;
+//            properties.selection_type = DialogConfigs.FILE_SELECT;
+//            properties.root = Environment.getExternalStorageDirectory();
+//            properties.error_dir = properties.root;
+//            properties.offset = properties.root;
+//            properties.extensions = new String[]{"apk"};
+//
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
+//                try {
+//                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+//                    intent.addCategory("android.intent.category.DEFAULT");
+//                    intent.setData(Uri.parse(String.format("package:%s", getApplicationContext().getPackageName())));
+//                    startActivityForResult(intent, 2296);
+//                } catch (Exception e) {
+//                    Intent intent = new Intent();
+//                    intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                    startActivityForResult(intent, 2296);
+//                }
+//            }
+//
+//            dialog = new FilePickerDialog(MainActivity.this, properties);
+//            dialog.setTitle(this.getString(R.string.select_a_file));
+//            dialog.setDialogSelectionListener(files -> {
+//                //files is the array of the paths of files selected by the Application User.
+//                if (files != null) {
+//                    File selectedFile = new File(files[0]);
+//                    if (selectedFile.exists() && selectedFile.isFile()) {
+//                        final ApkScanner apkScanner = new ApkScanner(context, files[0]);
+//                        apkScanner.execute();
+//                        //Toast.makeText(context,files[0],Toast.LENGTH_LONG).show();
+//                    } else {
+//                        Toast.makeText(context, context.getString(R.string.file_does_not_exist), Toast.LENGTH_SHORT).show();
+//                    }
+//                } else {
+//                    Toast.makeText(context, context.getString(R.string.error_loading_file), Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//
+//            dialog.show();
+//        } else if (id == R.id.nav_custom_scan) {
+//            this.startActivity(new Intent(this, CustomScanActivity.class).putExtra("withSysApps", withSysApps));
+//        } else if (id == R.id.libreRealTimeScan) {
+//            this.startActivity(new Intent(this, SettingsActivity.class));
+//        } else if (id == R.id.nav_help) {
+//            this.startActivity(new Intent(this, HelpActivity.class));
+//        } else if (id == R.id.nav_about) {
+//            this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://projectmatris.tech")));
+//        }
+//
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
 
     /**
      * Check if a service is running or not
