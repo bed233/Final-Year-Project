@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setSubtitle("Powered by LibreAV");
         toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
         toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         if (Build.VERSION.SDK_INT >= 21) {
@@ -135,6 +136,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                    startActivity(new Intent(this, com.rhul.fyp.asecav.MainActivity.class));
+                    return true;
             case R.id.libreRealTimeScan:
                 if(!item.isChecked()){
                     sharedPreferences.edit().putBoolean("realTime", !item.isChecked()).apply();
