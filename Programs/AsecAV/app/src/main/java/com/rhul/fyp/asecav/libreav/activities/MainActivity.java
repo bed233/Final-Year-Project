@@ -98,14 +98,14 @@ public class MainActivity extends AppCompatActivity
         String lastScan = sharedPreferences.getString("lastScan", this.getString(R.string.never));
         lastScanText.setText(this.getString(R.string.last_scan) + " " + lastScan);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//
+//        drawer.setBackgroundColor(getResources().getColor(R.color.white));
 
-        drawer.setBackgroundColor(getResources().getColor(R.color.white));
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity
             dialog.show();
         } else if (id == R.id.nav_custom_scan) {
             this.startActivity(new Intent(this, CustomScanActivity.class).putExtra("withSysApps", withSysApps));
-        } else if (id == R.id.nav_settings) {
+        } else if (id == R.id.libreRealTimeScan) {
             this.startActivity(new Intent(this, SettingsActivity.class));
         } else if (id == R.id.nav_help) {
             this.startActivity(new Intent(this, HelpActivity.class));
