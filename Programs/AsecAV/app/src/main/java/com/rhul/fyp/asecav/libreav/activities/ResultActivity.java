@@ -19,13 +19,17 @@
 package com.rhul.fyp.asecav.libreav.activities;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
+import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +37,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.rhul.fyp.asecav.R;
 import com.rhul.fyp.asecav.libreav.adapters.AppsAdapter;
 import com.rhul.fyp.asecav.libreav.data.AppInfo;
+import com.rhul.fyp.asecav.permissionpoc.PermissionsScanner;
 
 import java.util.ArrayList;
 
@@ -45,20 +50,32 @@ public class ResultActivity extends AppCompatActivity {
 
     /**
      * Laysout the List of results of every app properly.
+     *
      * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.libreav_activity_result);
 
-        ActionBar actionBar = this.getSupportActionBar();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(this.getString(R.string.report));
+//        if (toolbar != null) {
+//            toolbar.setDisplayHomeAsUpEnabled(true);
+//            toolbar.setTitle(this.getString(R.string.report));
+//        }
+
+        getSupportActionBar().setTitle("App Scanner");
+        getSupportActionBar().setSubtitle("Powered By AsecAV");
+        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
+        toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
 
-        setContentView(R.layout.libreav_activity_result);
 
         resultList = findViewById(R.id.resultList);
 
@@ -106,6 +123,8 @@ public class ResultActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == android.R.id.home) {
             NavUtils.navigateUpFromSameTask(this);
+        } else if (id == R.id.refresh) {
+            startActivity(new Intent(this, ScanActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -124,5 +143,11 @@ public class ResultActivity extends AppCompatActivity {
                 sendMessage();
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.permission_viewer_menu, menu);
+        return true;
     }
 }
