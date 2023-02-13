@@ -34,6 +34,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -81,6 +82,16 @@ public class MainActivity extends AppCompatActivity
         lastScanText = findViewById(R.id.textView1);
 
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("App Scanner");
+        getSupportActionBar().setSubtitle("Powered by LibreAV");
+        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
+        toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
+
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        }
 
         withSysApps = sharedPreferences.getBoolean("includeSystemApps", false);
 
@@ -88,6 +99,8 @@ public class MainActivity extends AppCompatActivity
         lastScanText.setText(this.getString(R.string.last_scan) + " " + lastScan);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
+        drawer.setBackgroundColor(getResources().getColor(R.color.white));
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -254,17 +267,6 @@ public class MainActivity extends AppCompatActivity
             this.startActivity(new Intent(this, HelpActivity.class));
         } else if (id == R.id.nav_about) {
             this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://projectmatris.tech")));
-        } else if (id == R.id.nav_bug_report) {
-            this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://github.com/projectmatris/antimalwareapp/issues/new")));
-        } else if (id == R.id.nav_share) {
-            Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
-            shareIntent.setType("text/plain");
-            String shareContent = "Check out LibreAV, a free and open-source anti-malware using machine learning: https://f-droid.org/en/packages/tech.projectmatris.antimalwareapp/";
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Project Matris");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, shareContent);
-            startActivity(Intent.createChooser(shareIntent, "Share via"));
-        } else if (id == R.id.nav_sponsor) {
-            this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://opencollective.com/libreav")));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
