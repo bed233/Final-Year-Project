@@ -134,16 +134,65 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.libreRealTimeScan:
+                if(!item.isChecked()){
+                    sharedPreferences.edit().putBoolean("realTime", !item.isChecked()).apply();
+                    item.setChecked(true);
+                }else {
+                    sharedPreferences.edit().putBoolean("realTime", false).apply();
+                    item.setChecked(false);
+                }
                 break;
             case R.id.nav_scan_apk:
+                DialogProperties properties = new DialogProperties();
+                properties.selection_mode = DialogConfigs.SINGLE_MODE;
+                properties.selection_type = DialogConfigs.FILE_SELECT;
+                properties.root = Environment.getExternalStorageDirectory();
+                properties.error_dir = properties.root;
+                properties.offset = properties.root;
+                properties.extensions = new String[]{"apk"};
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
+                    try {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                        intent.addCategory("android.intent.category.DEFAULT");
+                        intent.setData(Uri.parse(String.format("package:%s", getApplicationContext().getPackageName())));
+                        startActivityForResult(intent, 2296);
+                    } catch (Exception e) {
+                        Intent intent = new Intent();
+                        intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                        startActivityForResult(intent, 2296);
+                    }
+                }
+
+                dialog = new FilePickerDialog(MainActivity.this, properties);
+                dialog.setTitle(this.getString(R.string.select_a_file));
+                dialog.setDialogSelectionListener(files -> {
+                    //files is the array of the paths of files selected by the Application User.
+                    if (files != null) {
+                        File selectedFile = new File(files[0]);
+                        if (selectedFile.exists() && selectedFile.isFile()) {
+                            final ApkScanner apkScanner = new ApkScanner(context, files[0]);
+                            apkScanner.execute();
+                            //Toast.makeText(context,files[0],Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(context, context.getString(R.string.file_does_not_exist), Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(context, context.getString(R.string.error_loading_file), Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dialog.show();
                 break;
             case R.id.nav_custom_scan:
+                this.startActivity(new Intent(this, CustomScanActivity.class).putExtra("withSysApps", withSysApps));
                 break;
             case R.id.nav_help:
+                this.startActivity(new Intent(this, HelpActivity.class));
                 break;
             case R.id.nav_about:
+                this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://projectmatris.tech")));
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -166,7 +215,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     /**
-     * Check whether the app has Storage Permissions on the external(SD Card) as well as internal Storage device.
+     * Check whether the app has Storage Permissions on the external(SD Card) as well as internal
+     * Storage device.
+     *
      * @param requestCode
      * @param resultCode
      * @param data
@@ -190,6 +241,7 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Check whether the app has all permissions needed to run.
+     *
      * @param requestCode
      * @param permissions
      * @param grantResults
