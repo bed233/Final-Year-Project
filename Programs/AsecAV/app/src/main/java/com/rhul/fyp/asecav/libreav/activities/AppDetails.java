@@ -95,8 +95,8 @@ public class AppDetails extends AppCompatActivity {
         if(scan_mode.equalsIgnoreCase("normal_scan")) {
             TextView sha256Label = findViewById(R.id.sha256_label);
             HorizontalScrollView sha256Container = findViewById(R.id.sha256_container);
-            sha256Label.setVisibility(View.INVISIBLE);
-            sha256Container.setVisibility(View.INVISIBLE);
+            sha256Label.setVisibility(View.GONE);
+            sha256Container.setVisibility(View.GONE);
         } else {
             String sha256Hash = intent.getExtras().getString(AppConstants.SHA_256_HASH);
             TextView sha256HashTv = findViewById(R.id.sha256_text);
