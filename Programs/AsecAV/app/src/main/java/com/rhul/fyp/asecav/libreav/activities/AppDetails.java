@@ -7,8 +7,10 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
@@ -16,8 +18,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -54,12 +59,26 @@ public class AppDetails extends AppCompatActivity {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         toggleDarkMode(sharedPreferences.getBoolean("darkMode", false));
 
-        ActionBar actionBar = this.getSupportActionBar();
+        Toolbar toolBar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolBar);
 
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(this.getString(R.string.app_details));
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//            actionBar.setTitle(this.getString(R.string.app_details));
+//        }
+
+        getSupportActionBar().setTitle(getIntent().getExtras().getString("appName"));
+        getSupportActionBar().setSubtitle("App Scanner");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolBar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
+        toolBar.setTitleTextColor(getResources().getColor(android.R.color.white));
+
+        if(Build.VERSION.SDK_INT >= 21){
+            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.primary_red));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
         }
+
+
         permissionListText=findViewById(R.id.permissions_list_text);
         pName=findViewById(R.id.app_package);
         prediction=findViewById(R.id.app_prediction_score);
@@ -160,6 +179,17 @@ public class AppDetails extends AppCompatActivity {
             finish();
             startActivity(new Intent(AppDetails.this, MainActivity.class));
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id== android.R.id.home){
+            startActivity(new Intent(this,
+                    com.rhul.fyp.asecav.libreav.activities.ResultActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
