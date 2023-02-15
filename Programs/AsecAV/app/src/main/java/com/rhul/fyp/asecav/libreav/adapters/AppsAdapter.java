@@ -84,7 +84,7 @@ public class AppsAdapter extends RecyclerView.Adapter {
             appLabel.setText(appInfo.appName);
 
             if (appInfo.prediction.equalsIgnoreCase(contextRef.get().getString(R.string.malware))) {
-                prediction.setTextColor(Color.parseColor("#FF0000"));
+                prediction.setTextColor(Color.parseColor("#ff9191"));
             } else if (appInfo.prediction.equalsIgnoreCase(contextRef.get().getString(R.string.safe))) {
                 prediction.setTextColor(Color.parseColor("#00f100"));
             } else if (appInfo.prediction.equalsIgnoreCase(contextRef.get().getString(R.string.risky))) {

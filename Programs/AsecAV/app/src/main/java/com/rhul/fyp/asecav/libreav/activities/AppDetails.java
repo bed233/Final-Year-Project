@@ -102,7 +102,7 @@ public class AppDetails extends AppCompatActivity {
         resultType.setText(result);
         scan_mode = intent.getExtras().getString("scan_mode");
         if (result.equals(this.getString(R.string.malware))) {
-            resultType.setTextColor(Color.parseColor("#FF0000"));
+            resultType.setTextColor(Color.parseColor("#ff9191"));
         } else if (result.equals(this.getString(R.string.safe))) {
             resultType.setTextColor(Color.parseColor("#00f100"));
         } else if (result.equals(this.getString(R.string.risky))) {
