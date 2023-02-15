@@ -49,7 +49,7 @@ public class ResultActivity extends AppCompatActivity {
     public static ArrayList<AppInfo> apps;
 
     /**
-     * Laysout the List of results of every app properly.
+     * Lays out the List of results of every app properly.
      *
      * @param savedInstanceState
      */

@@ -104,7 +104,7 @@ public class AppDetails extends AppCompatActivity {
         if (result.equals(this.getString(R.string.malware))) {
             resultType.setTextColor(Color.parseColor("#FF0000"));
         } else if (result.equals(this.getString(R.string.safe))) {
-            resultType.setTextColor(Color.parseColor("#008000"));
+            resultType.setTextColor(Color.parseColor("#00f100"));
         } else if (result.equals(this.getString(R.string.risky))) {
             resultType.setTextColor(Color.parseColor("#FFA500"));
         } else {
