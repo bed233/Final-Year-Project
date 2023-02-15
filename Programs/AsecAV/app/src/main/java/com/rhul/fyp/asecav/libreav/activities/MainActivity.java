@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -90,6 +91,9 @@ public class MainActivity extends AppCompatActivity
         toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
         toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(this, R.color.white),
+                PorterDuff.Mode.SRC_ATOP);
 
 
         if (Build.VERSION.SDK_INT >= 21) {
