@@ -67,7 +67,7 @@ public class ResultActivity extends AppCompatActivity {
 //        }
 
         getSupportActionBar().setTitle("App Scanner");
-        getSupportActionBar().setSubtitle("Powered By AsecAV");
+        getSupportActionBar().setSubtitle("Powered By LibreAV");
         toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
         toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
