@@ -397,4 +397,5 @@
     <string name="select_folders">Select Folders</string>
     <string name="refresh">refresh</string>
     <string name="permission_viewer">Permission Viewer</string>
+    <string name="libreav_website">LibreAV Website</string>
 </resources>
