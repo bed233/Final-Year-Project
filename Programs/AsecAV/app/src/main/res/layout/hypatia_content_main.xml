@@ -5,7 +5,53 @@
     android:layout_height="match_parent"
     android:background="@drawable/libreav_app_background">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/progView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/progressView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_button">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/percent_start"
+                android:background="@drawable/rounded_button_left"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"/>
+
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="315dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/rounded_button"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="10.4dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:scaleY="6" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txtLogOutput"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
