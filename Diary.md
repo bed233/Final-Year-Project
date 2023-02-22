@@ -143,4 +143,7 @@ Completed Result list and Toolbar and have also modified the scan progress bar t
 and look more consistenw tih the rest of the app.
 
 ## 14/02/2023 - 17/02/2023
-Completed the UI for the App Scanner module of my security suite. Have begun working on the file scanner UI whhich will take a lot of work.
+Completed the UI for the App Scanner module of my security suite. Have begun working on the file scanner UI which will take a lot of work.
+
+## 18/02/2023/ - 22/02/2023
+Created progress bar that links up with scanner to show user the progress of the scanner.
