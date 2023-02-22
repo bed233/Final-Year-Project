@@ -139,4 +139,11 @@ Completed desgining new LibreAV and begun implementing design into the app. Upda
 Begun Modifying Toolbar in order to be more in line with rest of app and have modified Result list more to make Safety Classifications more obvious
 
 ## 13/02/2023
-Completed Result list and Toolbar and have also modified the scan progress bar to match Google's material design Guidelines and look more consistenw tih the rest of the app.
+Completed Result list and Toolbar and have also modified the scan progress bar to match Google's material design Guidelines
+and look more consistenw tih the rest of the app.
+
+## 14/02/2023 - 17/02/2023
+Completed the UI for the App Scanner module of my security suite. Have begun working on the file scanner UI which will take a lot of work.
+
+## 18/02/2023/ - 22/02/2023
+Created progress bar that links up with scanner to show user the progress of the scanner.
