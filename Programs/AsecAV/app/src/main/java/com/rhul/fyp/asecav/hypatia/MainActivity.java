@@ -34,6 +34,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     private MalwareScanner malwareScanner = null;
 
     private TextView logView;
+    private ProgressBar progressBar;
+    private TextView percentText;
 
     private static final String buildVersionName = BuildConfig.VERSION_NAME;
 
@@ -78,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
 
         logView = findViewById(R.id.txtLogOutput);
+        progressBar = findViewById(R.id.progressBar);
+        percentText = findViewById(R.id.percentText);
+
+
         logView.setMovementMethod(new ScrollingMovementMethod());
         logView.setTextIsSelectable(true);
 
@@ -87,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
         logView.append(getString(R.string.app_db_type_clamav) + "\n\n");
 
         malwareScanner = new MalwareScanner(this, this, true);
+        malwareScanner.setProgressBar(progressBar);
+        malwareScanner.setPercentText(percentText);
 
         prefs = getSharedPreferences(BuildConfig.APPLICATION_ID, Context.MODE_PRIVATE);
 
@@ -126,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
      * not.
      */
     private void requestPermissions() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_PERMISSION_EXTERNAL_STORAGE);
         }
     }
@@ -303,6 +312,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void startScanner() {
         malwareScanner = new MalwareScanner(this, this, true);
+        progressBar = findViewById(R.id.progressBar);
+        percentText = findViewById(R.id.percentText);
+        malwareScanner.setProgressBar(progressBar);
+        malwareScanner.setPercentText(percentText);
         malwareScanner.running = true;
         HashSet<File> filesToScan = new HashSet<>();
 //        if (scanSystem) {
@@ -322,16 +335,16 @@ public class MainActivity extends AppCompatActivity {
         if (prefs.getBoolean("System", false)) {
             filesToScan.add(Environment.getRootDirectory());
         }
-        if (prefs.getBoolean("Apps", false)) {
+        if (prefs.getBoolean("Apps", true)) {
             for (ApplicationInfo packageInfo : getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA)) {
                 filesToScan.add(new File(packageInfo.sourceDir));
             }
         }
-        if (prefs.getBoolean("Documents", false)) {
+        if (prefs.getBoolean("Documents", true)) {
             filesToScan.add(new File("/storage/emulated/0/Documents"));
         }
-        if (prefs.getBoolean("Downloads", false)) {
-            filesToScan.add(new File("/storage/emulated/0/Downloads"));
+        if (prefs.getBoolean("Downloads", true)) {
+            filesToScan.add(new File("/storage/emulated/0/Download"));
         }
         if (prefs.getBoolean("Music", false)) {
             filesToScan.add(new File("/storage/emulated/0/Music"));
@@ -339,6 +352,7 @@ public class MainActivity extends AppCompatActivity {
         if (prefs.getBoolean("Pictures", false)) {
             filesToScan.add(new File("/storage/emulated/0/Pictures"));
             filesToScan.add(new File("/storage/emulated/0/DCIM"));
+            filesToScan.add(new File("/storage/emulated/0/Photos"));
         }
         if (prefs.getBoolean("Movies", false)) {
             filesToScan.add(new File("/storage/emulated/0/Movies"));
