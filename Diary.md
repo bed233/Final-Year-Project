@@ -146,4 +146,4 @@ and look more consistenw tih the rest of the app.
 Completed the UI for the App Scanner module of my security suite. Have begun working on the file scanner UI which will take a lot of work.
 
 ## 18/02/2023/ - 22/02/2023
-Created progress bar that links up with scanner to show user the progress of the scanner.
+Created progress bar that links up with scanner to show user the progress of the scanner and completed the majority of the file scanner's UI.
