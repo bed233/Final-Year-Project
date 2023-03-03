@@ -79,6 +79,8 @@ repositories {
 
 dependencies {
 
+    implementation("com.ramijemli.percentagechartview:percentagechartview:0.3.1")
+
     //Other Modules
 //    implementation("androidx.appcompat:appcompat:1.5.1")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
