@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/libreav_app_background"
     android:layout_height="match_parent"
+    android:background="@drawable/libreav_app_background"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -22,6 +22,71 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:padding="32dp"
+        tools:context=".home_page.ui.files.FilesFragment">
+        <!-- Internal storage -->
+        <LinearLayout
+            android:id="@+id/internal_storage_tab"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/rounded_button"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <com.ramijemli.percentagechartview.PercentageChartView
+                android:id="@+id/storage_percent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:pcv_animDuration="2000"
+                app:pcv_animInterpolator="accelerate_decelerate"
+                app:pcv_drawBackground="false"
+                app:pcv_mode="ring"
+                app:pcv_orientation="clockwise"
+                app:pcv_startAngle="270"
+                app:pcv_drawBackgroundBar="true"
+                app:pcv_backgroundBarColor="@color/white"
+                app:pcv_textSize="18sp"
+            />
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="@dimen/zero_dp"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:gravity="center_vertical"-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:orientation="vertical"-->
+            <!--            android:layout_marginLeft="@dimen/material_generic_medium"-->
+            <!--            android:layout_marginStart="@dimen/material_generic_medium"-->
+            <!--            >-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/internal_storage_title"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:textSize="@dimen/twelve_sp"-->
+            <!--                android:maxLines="1"-->
+            <!--                android:text="@string/internal_storage"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                />-->
+            <!--            <TextView-->
+            <!--                android:id="@+id/files_amount"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="&#45;&#45; items"-->
+            <!--                android:textSize="@dimen/twelve_sp"-->
+            <!--                android:textColor="@color/gray_text"-->
+            <!--                />-->
+            <!--        </LinearLayout>-->
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal">
@@ -31,30 +96,30 @@
             android:layout_width="75pt"
             android:layout_height="20pt"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:clickable="true"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
             android:background="@drawable/rounded_button_left"
+            android:clickable="true"
             android:focusable="true"
             android:text="@string/scan_files"
-            android:layout_marginRight="1dp"
             android:textColor="@color/black"
             app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck"
-            android:layout_marginEnd="1dp" />
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/appScan"
             android:layout_width="75pt"
             android:layout_height="20pt"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/rounded_button_right"
             android:clickable="true"
             android:focusable="true"
-            android:background="@drawable/rounded_button_right"
             android:text="@string/scan_apps"
-            android:layout_marginLeft="1dp"
             android:textColor="@color/black"
             app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck"
-            android:layout_marginStart="1dp" />
+            tools:ignore="TextContrastCheck" />
 
 
     </LinearLayout>
