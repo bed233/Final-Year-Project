@@ -21,14 +21,14 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- Ring Stats bar for Internal Storage Stats-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
         android:orientation="vertical"
-        android:layout_marginTop="32dp"
-        android:padding="32dp"
-        tools:context=".home_page.ui.files.FilesFragment">
+        android:layout_marginTop="48dp"
+        android:padding="32dp">
         <!-- Internal storage -->
         <LinearLayout
             android:id="@+id/internal_storage_tab"
@@ -40,48 +40,88 @@
 
             <com.ramijemli.percentagechartview.PercentageChartView
                 android:id="@+id/storage_percent"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:pcv_animDuration="2000"
                 app:pcv_animInterpolator="accelerate_decelerate"
+                app:pcv_backgroundBarColor="@color/white"
                 app:pcv_drawBackground="false"
+                app:pcv_drawBackgroundBar="true"
                 app:pcv_mode="ring"
                 app:pcv_orientation="clockwise"
                 app:pcv_startAngle="270"
-                app:pcv_drawBackgroundBar="true"
-                app:pcv_backgroundBarColor="@color/white"
-                app:pcv_textSize="18sp"
-            />
-            <!--        <LinearLayout-->
-            <!--            android:layout_width="@dimen/zero_dp"-->
-            <!--            android:layout_height="match_parent"-->
-            <!--            android:gravity="center_vertical"-->
-            <!--            android:layout_weight="1"-->
-            <!--            android:orientation="vertical"-->
-            <!--            android:layout_marginLeft="@dimen/material_generic_medium"-->
-            <!--            android:layout_marginStart="@dimen/material_generic_medium"-->
-            <!--            >-->
-            <!--            <TextView-->
-            <!--                android:id="@+id/internal_storage_title"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:textSize="@dimen/twelve_sp"-->
-            <!--                android:maxLines="1"-->
-            <!--                android:text="@string/internal_storage"-->
-            <!--                android:textStyle="bold"-->
-            <!--                android:textAllCaps="true"-->
-            <!--                android:textColor="@color/white"-->
-            <!--                />-->
-            <!--            <TextView-->
-            <!--                android:id="@+id/files_amount"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:text="&#45;&#45; items"-->
-            <!--                android:textSize="@dimen/twelve_sp"-->
-            <!--                android:textColor="@color/gray_text"-->
-            <!--                />-->
-            <!--        </LinearLayout>-->
+                app:pcv_textSize="18sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginStart="32dp"
+                        >
+                        <TextView
+                            android:id="@+id/internal_storage_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:maxLines="1"
+                            android:text="@string/internal_storage"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            />
+                        <TextView
+                            android:id="@+id/files_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- items"
+                            android:textSize="12sp"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/white"
+                            />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/free_space"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"/>
+                            <TextView
+                                android:id="@+id/free_space"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="--GB"
+                                android:textSize="12sp"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/used_space"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"/>
+                            <TextView
+                                android:id="@+id/used_space"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="--GB"
+                                android:textSize="12sp"
+                                android:textColor="@color/white"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
