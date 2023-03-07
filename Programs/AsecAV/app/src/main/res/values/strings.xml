@@ -398,4 +398,7 @@
     <string name="refresh">refresh</string>
     <string name="permission_viewer">Permission Viewer</string>
     <string name="libreav_website">LibreAV Website</string>
+    <string name="internal_storage">Internal Storage</string>
+    <string name="free_space">Free Space:</string>
+    <string name="used_space">Used Space:</string>
 </resources>
