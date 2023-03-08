@@ -25,14 +25,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:background="@null"
         android:orientation="vertical"
-        android:layout_marginTop="48dp"
-        android:padding="32dp">
+        android:padding="25dp">
         <!-- Internal storage -->
         <LinearLayout
             android:id="@+id/internal_storage_tab"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="180dp"
             android:background="@drawable/rounded_button"
             android:orientation="horizontal"
@@ -52,167 +52,241 @@
                 app:pcv_orientation="clockwise"
                 app:pcv_startAngle="270"
                 app:pcv_textSize="18sp" />
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginLeft="32dp"
-                        android:layout_marginStart="32dp"
-                        >
-                        <TextView
-                            android:id="@+id/internal_storage_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="12sp"
-                            android:maxLines="1"
-                            android:text="@string/internal_storage"
-                            android:textStyle="bold"
-                            android:textAllCaps="true"
-                            android:textColor="@color/white"
-                            />
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="10dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/total_space"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white"/>
-                            <TextView
-                                android:id="@+id/total_space"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingStart="5dp"
-                                android:text="--GB"
-                                android:textSize="12sp"
-                                android:textColor="@color/white"/>
 
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/used_space"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white"/>
-                            <TextView
-                                android:id="@+id/used_space"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingStart="5dp"
-                                android:text="--GB"
-                                android:textSize="12sp"
-                                android:textColor="@color/white"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/free_space"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white"/>
-                            <TextView
-                                android:id="@+id/free_space"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingStart="9dp"
-                                android:text="--GB"
-                                android:textSize="12sp"
-                                android:textColor="@color/white"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
-                        </LinearLayout>
-                    </LinearLayout>
+                <TextView
+                    android:id="@+id/internal_storage_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/internal_storage"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_space"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/total_space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@string/gb"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/used_space"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/used_space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@string/gb"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/free_space"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/free_space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="9dp"
+                        android:paddingEnd="9dp"
+                        android:text="@string/gb"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal">
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="100dp">
 
-        <Button
-            android:id="@+id/fileScan"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal">
+
+            <LinearLayout
+                android:id="@+id/fileScan"
+                android:layout_width="75pt"
+                android:layout_height="50pt"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/rounded_button_left"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:text="@string/scan_files"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/appScan"
+                android:layout_width="75pt"
+                android:layout_height="50pt"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_button_right"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:text="@string/scan_apps"
+                android:textColor="@color/white"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:paddingTop="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="@string/scan_apps"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:typeface="monospace"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="25dp"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/last_scan"
+                            android:textColor="#D5D5D5"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:typeface="monospace" />
+
+                        <TextView
+                            android:id="@+id/lastAppScan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date"
+                            android:textColor="#D5D5D5"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:typeface="monospace" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="1dp"
-            android:background="@drawable/rounded_button_left"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/scan_files"
-            android:textColor="@color/white"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck" />
+            android:layout_marginTop="10dp">
 
-        <Button
-            android:id="@+id/appScan"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:background="@drawable/rounded_button_right"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/scan_apps"
-            android:textColor="@color/white"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck" />
+            <Button
+                android:id="@+id/appLocker"
+                android:layout_width="75pt"
+                android:layout_height="50pt"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/rounded_button_left"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/AppLocker"
+                android:textColor="@color/white"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck" />
 
-
+            <Button
+                android:id="@+id/permissionManager"
+                android:layout_width="75pt"
+                android:layout_height="50pt"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_button_right"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/permission_viewer"
+                android:textColor="@color/white"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck" />
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:paddingTop="45pt">
-
-        <Button
-            android:id="@+id/appLocker"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="1dp"
-            android:background="@drawable/rounded_button_left"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/AppLocker"
-            android:textColor="@color/white"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck" />
-
-        <Button
-            android:id="@+id/permissionManager"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:background="@drawable/rounded_button_right"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/permission_viewer"
-            android:textColor="@color/white"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck" />
-
-
-    </LinearLayout>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
