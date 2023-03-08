@@ -147,3 +147,9 @@ Completed the UI for the App Scanner module of my security suite. Have begun wor
 
 ## 18/02/2023/ - 22/02/2023
 Created progress bar that links up with scanner to show user the progress of the scanner and completed the majority of the file scanner's UI.
+
+## 05/03/2023 - 07/03/2023
+Begun Working on my main menu layout by adding a widget to show user storage stats.
+
+## 08/03/2023
+Implemented Storage stats and outputting total/used/free space. Made buttons bigger in Main Menu to use more of the screen.Scan Apps button now shows the last time the scan was executed. Set up toolbar for Main Menu.

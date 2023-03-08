@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/libreav_app_background"
     android:layout_height="match_parent"
+    android:background="@drawable/libreav_app_background"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -17,86 +17,316 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:itemIconTint="@color/white"
+            app:menu="@menu/main_menu"
+            app:navigationIcon="@drawable/round_arrow_back_24"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- Ring Stats bar for Internal Storage Stats-->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal">
+        android:layout_marginTop="48dp"
+        android:background="@null"
+        android:orientation="vertical"
+        android:padding="25dp">
+        <!-- Internal storage -->
+        <LinearLayout
+            android:id="@+id/internal_storage_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:background="@drawable/rounded_button"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-        <Button
-            android:id="@+id/fileScan"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:clickable="true"
-            android:background="@drawable/rounded_button_left"
-            android:focusable="true"
-            android:text="@string/scan_files"
-            android:layout_marginRight="1dp"
-            android:textColor="@color/black"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck"
-            android:layout_marginEnd="1dp" />
+            <com.ramijemli.percentagechartview.PercentageChartView
+                android:id="@+id/storage_percent"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:pcv_animDuration="1000"
+                app:pcv_animInterpolator="accelerate_decelerate"
+                app:pcv_progressColor="@color/accent"
+                app:pcv_backgroundBarColor="@color/white"
+                app:pcv_drawBackground="false"
+                app:pcv_drawBackgroundBar="true"
+                app:pcv_mode="ring"
+                app:pcv_orientation="clockwise"
+                app:pcv_startAngle="270"
+                app:pcv_textSize="18sp" />
 
-        <Button
-            android:id="@+id/appScan"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:clickable="true"
-            android:focusable="true"
-            android:background="@drawable/rounded_button_right"
-            android:text="@string/scan_apps"
-            android:layout_marginLeft="1dp"
-            android:textColor="@color/black"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck"
-            android:layout_marginStart="1dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/internal_storage_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/internal_storage"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_space"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/total_space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@string/gb"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/used_space"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/used_space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@string/gb"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/free_space"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/free_space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="9dp"
+                        android:paddingEnd="9dp"
+                        android:text="@string/gb"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:paddingTop="45pt">
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="275dp">
 
-        <Button
-            android:id="@+id/appLocker"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="1dp"
-            android:background="@drawable/rounded_button_left"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/AppLocker"
-            android:textColor="@color/black"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck" />
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
 
-        <Button
-            android:id="@+id/permissionManager"
-            android:layout_width="75pt"
-            android:layout_height="20pt"
+            <LinearLayout
+                android:id="@+id/fileScan"
+                android:layout_width="175dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/rounded_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:text="@string/scan_files"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/appScan"
+                android:layout_width="175dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:text="@string/scan_apps"
+                android:textColor="@color/white"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:paddingTop="40dp"
+                        android:text="@string/scan_apps"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="monospace" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="25dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/last_scan"
+                            android:textColor="#D5D5D5"
+                            android:gravity="center"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:typeface="monospace" />
+
+                        <TextView
+                            android:id="@+id/lastAppScan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date"
+                            android:gravity="center"
+                            android:textColor="#D5D5D5"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:typeface="monospace" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:background="@drawable/rounded_button_right"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/permission_viewer"
-            android:textColor="@color/black"
-            app:useCompatPadding="true"
-            tools:ignore="TextContrastCheck" />
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+            <LinearLayout
+                android:id="@+id/appLocker"
+                android:layout_width="175dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/rounded_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:text="@string/AppLocker"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
 
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/permissionViewer"
+                android:layout_width="175dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/rounded_button"
+                android:layout_marginStart="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                app:useCompatPadding="true"
+                tools:ignore="TextContrastCheck">
+
+                <TextView
+                    android:layout_width="175dp"
+                    android:padding="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
+                    android:text="@string/permission_viewer"
+                    android:textColor="@color/white"
+                    android:maxLines="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
