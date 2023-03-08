@@ -9,9 +9,11 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.StatFs;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
@@ -144,5 +146,15 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.openSource:
+                startActivity(new Intent(this, com.rhul.fyp.asecav.AboutLibrariesActivity.class));
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
