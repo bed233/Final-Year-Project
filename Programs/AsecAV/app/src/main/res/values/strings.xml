@@ -396,7 +396,7 @@
     <string name="lblSelectFoldersTitle">Select Folders to Scan</string>
     <string name="select_folders">Select Folders</string>
     <string name="refresh">refresh</string>
-    <string name="permission_viewer">Permission Viewer</string>
+    <string name="permission_viewer">PERMISSION VIEWER</string>
     <string name="libreav_website">LibreAV Website</string>
     <string name="internal_storage">Internal Storage</string>
     <string name="free_space">Free Space:</string>
