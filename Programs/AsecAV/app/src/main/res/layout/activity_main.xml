@@ -72,30 +72,22 @@
                             android:textAllCaps="true"
                             android:textColor="@color/white"
                             />
-                        <TextView
-                            android:id="@+id/files_amount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="-- items"
-                            android:textSize="12sp"
-                            android:paddingBottom="10dp"
-                            android:textColor="@color/white"
-                            />
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/free_space"
+                                android:text="@string/total_space"
                                 android:textSize="12sp"
                                 android:textStyle="bold"
                                 android:textColor="@color/white"/>
                             <TextView
-                                android:id="@+id/free_space"
+                                android:id="@+id/total_space"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:paddingStart="5dp"
+                                android:paddingStart="0dp"
                                 android:text="--GB"
                                 android:textSize="12sp"
                                 android:textColor="@color/white"/>
@@ -113,6 +105,25 @@
                                 android:textColor="@color/white"/>
                             <TextView
                                 android:id="@+id/used_space"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="--GB"
+                                android:textSize="12sp"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/free_space"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"/>
+                            <TextView
+                                android:id="@+id/free_space"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="5dp"
