@@ -14,7 +14,7 @@ buildscript {
         classpath(Config.BuildPlugins.androidGradlePlugin)
         classpath(Config.BuildPlugins.kotlinGradlePlugin)
         classpath("com.jakewharton.hugo:hugo-plugin:1.2.1")
-        classpath("com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:8.9.4")
+        classpath("com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:8.5.0")
     }
 
 }
