@@ -26,6 +26,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.InputType;
@@ -83,6 +85,23 @@ public class MainActivity extends AppCompatActivity {
         logView = findViewById(R.id.txtLogOutput);
         progressBar = findViewById(R.id.progressBar);
         percentText = findViewById(R.id.percentText);
+
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("File Scanner");
+        getSupportActionBar().setSubtitle("Powered by Hypatia");
+        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
+        toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(this, R.color.white),
+                PorterDuff.Mode.SRC_ATOP);
+
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        }
 
 
         logView.setMovementMethod(new ScrollingMovementMethod());
