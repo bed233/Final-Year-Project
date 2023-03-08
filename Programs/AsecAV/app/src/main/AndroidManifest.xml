@@ -137,8 +137,8 @@
                 android:value=".libreav.activities.MainActivity" />
         </activity>
         <activity
-            android:name=".libreav.activities.CustomAboutLibrariesActivity"
-            android:theme="@style/CustomAboutLibrariesStyle"
+            android:name=".AboutLibrariesActivity"
+            android:theme="@style/AppTheme"
             />
         <activity android:name=".libreav.activities.AppDetails"
             android:theme="@style/AppTheme"/>
