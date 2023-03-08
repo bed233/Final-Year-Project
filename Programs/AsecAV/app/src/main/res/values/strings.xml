@@ -404,4 +404,5 @@
     <string name="total_space">Total Space:</string>
     <string name="gb">--GB</string>
     <string name="date">Date</string>
+    <string name="view_open_source_libraries">View Open Source Libraries</string>
 </resources>
