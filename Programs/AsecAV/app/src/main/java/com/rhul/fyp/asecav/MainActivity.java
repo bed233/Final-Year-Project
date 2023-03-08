@@ -8,8 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.StatFs;
-import android.view.View;
-import android.widget.Button;
+import android.view.Menu;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +19,8 @@ import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
 import com.ramijemli.percentagechartview.PercentageChartView;
+import com.rhul.fyp.asecav.libreav.receiver.AppListener;
+import com.rhul.fyp.asecav.libreav.services.RealTimeService;
 import com.rhul.fyp.asecav.permissionpoc.PermissionsScanner;
 import com.rhul.fyp.asecav.permissionpoc.ResultActivity;
 
@@ -38,9 +39,9 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         final long gigabyteAvailable =
                 (stats.getBlockSizeLong() * stats.getAvailableBlocksLong()) / (1024 * 1024 * 1024);
         final long totalSpace =
-                (stats.getBlockSizeLong() * stats.getBlockCountLong()) / (1024 * 1024 * 1024) ;
+                (stats.getBlockSizeLong() * stats.getBlockCountLong()) / (1024 * 1024 * 1024);
         final long gigabyteUsed = totalSpace - gigabyteAvailable;
-        final float percentUsed = (float)((float)gigabyteUsed / (float)totalSpace) * 100;
+        final float percentUsed = (float) ((float) gigabyteUsed / (float) totalSpace) * 100;
         final TextView freeSpace = findViewById(R.id.free_space);
         final TextView usedSpace = findViewById(R.id.used_space);
         final TextView totalSpaceText = findViewById(R.id.total_space);
@@ -97,15 +98,16 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                     com.rhul.fyp.asecav.libreav.activities.MainActivity.class));
         });
         permissionManager.setOnClickListener(view -> {
-            if (!scan.finished){
+            if (!scan.finished) {
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         finish();
                         Intent resultScreen = new Intent(scan.contextRef.get(), ResultActivity.class);
-                        scan.contextRef.get().startActivity(resultScreen);                }
+                        scan.contextRef.get().startActivity(resultScreen);
+                    }
                 }, 800);
-            }else{
+            } else {
                 finish();
                 Intent resultScreen = new Intent(scan.contextRef.get(), ResultActivity.class);
                 scan.contextRef.get().startActivity(resultScreen);
@@ -120,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 //            }
 //        });
     }
+
     private void setupSharedPreferences() {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
@@ -129,5 +132,17 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }
