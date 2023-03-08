@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
 
 import com.ramijemli.percentagechartview.PercentageChartView;
@@ -46,6 +47,16 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         final LinearLayout permissionManager = findViewById(R.id.permissionViewer);
         final LinearLayout maxLock = findViewById(R.id.appLocker);
         final TextView lastAppScan = findViewById(R.id.lastAppScan);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("AsecAV");
+        getSupportActionBar().setSubtitle("Main Menu");
+        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
+        toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         storageStats.setProgress(percentUsed, true);
