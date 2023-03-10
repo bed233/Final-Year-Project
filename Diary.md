@@ -153,3 +153,6 @@ Begun Working on my main menu layout by adding a widget to show user storage sta
 
 ## 08/03/2023
 Implemented Storage stats and outputting total/used/free space. Made buttons bigger in Main Menu to use more of the screen.Scan Apps button now shows the last time the scan was executed. Set up toolbar for Main Menu.
+
+## 10/03/2023
+Have begun focusing on my Final Report and adding/planning any headings that May of been missing since INterim. Have also started reviewing my interim report to find which sections that need to be updated/rewritten. Have begun looking into and implmenting Espresso Testing for my android app.
