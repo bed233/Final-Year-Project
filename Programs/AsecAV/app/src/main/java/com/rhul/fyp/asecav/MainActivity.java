@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         final TextView usedSpace = findViewById(R.id.used_space);
         final TextView totalSpaceText = findViewById(R.id.total_space);
         final PercentageChartView storageStats = findViewById(R.id.storage_percent);
+
         final LinearLayout fileScan = findViewById(R.id.fileScan);
         final LinearLayout appScan = findViewById(R.id.appScan);
         final LinearLayout permissionManager = findViewById(R.id.permissionViewer);
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
 
         storageStats.setProgress(percentUsed, true);
+        storageStats.apply();
 
         totalSpaceText.setText((int) totalSpace + "GB");
         freeSpace.setText((int) gigabyteAvailable + "GB");
