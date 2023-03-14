@@ -155,4 +155,7 @@ Begun Working on my main menu layout by adding a widget to show user storage sta
 Implemented Storage stats and outputting total/used/free space. Made buttons bigger in Main Menu to use more of the screen.Scan Apps button now shows the last time the scan was executed. Set up toolbar for Main Menu.
 
 ## 10/03/2023
-Have begun focusing on my Final Report and adding/planning any headings that May of been missing since INterim. Have also started reviewing my interim report to find which sections that need to be updated/rewritten. Have begun looking into and implmenting Espresso Testing for my android app.
+Have begun focusing on my Final Report and adding/planning any headings that May of been missing since Interim. Have also started reviewing my interim report to find which sections that need to be updated/rewritten. Have begun looking into and implmenting Espresso Testing for my android app.
+
+## 11/03/2023
+For a reason unknown to me, Espresso Testing seems to break my entire app and cause it to fail whilst compiling due to a mismatch of kotlin versions. I have been unable to find a solution to this issue both using my own knowledge and online so have resorted to manual testing of my app. I have however used Firebase Test lab in order to test whether the app runs correctly on a number of Android OS versions ranging from API 21-33.
