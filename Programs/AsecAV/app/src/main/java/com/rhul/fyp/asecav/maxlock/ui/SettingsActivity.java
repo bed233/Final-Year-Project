@@ -24,6 +24,8 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -43,6 +45,7 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.customtabs.CustomTabsService;
 import androidx.browser.customtabs.CustomTabsServiceConnection;
 import androidx.browser.customtabs.CustomTabsSession;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
@@ -117,6 +120,23 @@ public class SettingsActivity extends AppCompatActivity implements Authenticatio
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         secondFragmentContainer = findViewById(R.id.second_fragment_container);
+
+        getSupportActionBar().setTitle("App Locker");
+        getSupportActionBar().setSubtitle("Powered by MaxLock");
+
+        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
+        toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(this, R.color.white),
+                PorterDuff.Mode.SRC_ATOP);
+
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        }
 
         Fragment settingsFragment = getSupportFragmentManager().findFragmentByTag(TAG_PREFERENCE_FRAGMENT);
         if (settingsFragment == null || !UNLOCKED) {
