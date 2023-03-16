@@ -162,3 +162,6 @@ For a reason unknown to me, Espresso Testing seems to break my entire app and ca
 
 ## 12/03/2023 - 15/03/2023
 Have been fully focusing on my report.
+
+## 16/03/2023
+Have realised that I never set up Toolbar in Maxlock to be in line with rest of app. Have now done this however back arrow doesn't appear to show. Will need to investigate this before submission.
