@@ -9,9 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
         android:background="@color/colorPrimary"
-        android:theme="@style/AppTheme.PopupOverlay"
+        android:theme="@style/AppTheme.NoActionBar"
         android:elevation="4dp"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:popupTheme="@style/AppTheme.NoActionBar"
         app:navigationIcon="@drawable/round_arrow_back_24"
         app:itemIconTint="@color/white" />
 </merge>
