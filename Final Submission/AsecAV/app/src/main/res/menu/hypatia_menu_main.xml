@@ -1,0 +1,49 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rhul.fyp.asecav.hypatia.MainActivity">
+
+    <item
+        android:id="@+id/toggleOnionRouting"
+        android:title="@string/lblOnionRoutingToggle"
+        android:checkable="true" />
+    <item
+        android:id="@+id/mnuUpdateDatabase"
+        android:title="@string/lblUpdateDatabase" />
+    <item
+        android:id="@+id/mnuSelectDatabases"
+        android:title="@string/lblSelectDatabases" />
+    <item
+        android:id="@+id/mnuDatabaseServer"
+        android:title="@string/lblDatabaseServer" />
+    <item
+        android:id="@+id/mnuSelectFolders"
+        android:title="@string/select_folders"/>
+    <item
+        android:id="@+id/toggleRealtime"
+        android:title="@string/lblRealtimeScannerToggle"
+        android:checkable="true" />
+<!--    <item-->
+<!--        android:id="@+id/mnuScanSystem"-->
+<!--        android:title="@string/lblScanSystem"-->
+<!--        android:checkable="true"-->
+<!--        android:checked="false" />-->
+<!--    <item-->
+<!--        android:id="@+id/mnuScanApps"-->
+<!--        android:title="@string/lblScanApps"-->
+<!--        android:checkable="true"-->
+<!--        android:checked="true" />-->
+<!--    <item-->
+<!--        android:id="@+id/mnuScanInternal"-->
+<!--        android:title="@string/lblScanInternal"-->
+<!--        android:checkable="true"-->
+<!--        android:checked="true" />-->
+<!--    <item-->
+<!--        android:id="@+id/mnuScanExternal"-->
+<!--        android:title="@string/lblScanExternal"-->
+<!--        android:checkable="true"-->
+<!--        android:checked="false" />-->
+    <item
+        android:id="@+id/mnuFullCredits"
+        android:title="@string/lblFullCredits" />
+
+</menu>
