@@ -96,7 +96,7 @@
         </activity>
         <activity
             android:name=".libreav.activities.SplashActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
             <!--            <intent-filter>-->
             <!--                <action android:name="android.intent.action.MAIN" />-->
@@ -111,7 +111,7 @@
             android:name=".libreav.settings.SettingsActivity"
             android:label="@string/settings_title"
             android:parentActivityName=".libreav.activities.MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".libreav.activities.MainActivity" />
@@ -120,31 +120,31 @@
             android:name=".libreav.activities.HelpActivity"
             android:label="@string/help_title"
             android:parentActivityName=".libreav.activities.MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".libreav.activities.MainActivity" />
         </activity>
         <activity
             android:name=".libreav.activities.ScanActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".libreav.activities.ResultActivity"
             android:parentActivityName=".libreav.activities.MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".libreav.activities.MainActivity" />
         </activity>
         <activity
             android:name=".AboutLibrariesActivity"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppTheme.NoActionBar"
             />
         <activity android:name=".libreav.activities.AppDetails"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".libreav.activities.CustomScanActivity"
             android:parentActivityName=".libreav.activities.MainActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <service
             android:name=".hypatia.MalwareScannerService"
@@ -230,7 +230,8 @@
 
         <activity
             android:name="com.rhul.fyp.asecav.maxlock.ui.settings_new.SettingsActivity"
-            android:label="MaxLock">
+            android:label="MaxLock"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
 <!--                <action android:name="android.intent.action.MAIN" />-->
                 <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
@@ -256,7 +257,8 @@
             android:name="com.rhul.fyp.asecav.maxlock.ui.SettingsActivity"
             android:label="MaxLock"
             android:taskAffinity=""
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme.NoActionBar">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.rhul.fyp.asecav",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 58,
+      "versionName": "8.0-indev",
+      "enabled": true,
+      "outputFile": "ML-8.0-indev-release.apk"
+    }
+  ]
+}

@@ -23,11 +23,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/libreav_app_background"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/AppTheme.NoActionBar"
     tools:context="com.rhul.fyp.asecav.libreav.activities.ResultActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:theme="@style/AppTheme.NoActionBar"
         tools:context="com.rhul.fyp.asecav.libreav.activities.ResultActivity">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -35,15 +37,14 @@
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             app:liftOnScroll="true"
-            android:theme="@style/AppTheme.PopupOverlay">
+            android:theme="@style/AppTheme.NoActionBar">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
-                app:menu="@menu/permission_viewer_menu"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:popupTheme="@style/AppTheme.NoActionBar"
                 app:navigationIcon="@drawable/round_arrow_back_24"/>
 
         </com.google.android.material.appbar.AppBarLayout>

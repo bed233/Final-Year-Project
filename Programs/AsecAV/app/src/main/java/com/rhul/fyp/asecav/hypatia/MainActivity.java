@@ -21,7 +21,6 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
@@ -30,12 +29,10 @@ import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.text.InputType;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -93,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
         toolbar.setSubtitleTextColor(getResources().getColor(android.R.color.white));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(this, R.color.white),
-                PorterDuff.Mode.SRC_ATOP);
+        toolbar.getOverflowIcon().setColorFilter(ContextCompat.getColor(this, R.color.white), PorterDuff.Mode.SRC_ATOP);
 
 
         if (Build.VERSION.SDK_INT >= 21) {
@@ -200,21 +197,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Author: zjac078 29/01/2023
-     * Select Folders method will create a Alert Dialog that will allow the user to select which
-     * folders they would like to be scanned in order to be speed up the process.
-     * Using Preferences to save the user selection between sessions
+     * Author: zjac078 29/01/2023 Select Folders method will create a Alert Dialog that will allow
+     * the user to select which folders they would like to be scanned in order to be speed up the
+     * process. Using Preferences to save the user selection between sessions
      */
     private void selectFolders() {
-        final String[] folders = {"System", "Apps", "Documents", "Downloads", "Music", "Pictures", "Movies",
-                "Recordings"}; //Setting the string representation for each folder
-        final boolean[] folderDefaults = {prefs.getBoolean("System", false), prefs.getBoolean("Apps",
-                false),
-                prefs.getBoolean(
-                        "Documents", true),
-                prefs.getBoolean("Downloads", true), prefs.getBoolean("Music", true),
-                prefs.getBoolean("Pictures", false), prefs.getBoolean("Movies", false),
-                prefs.getBoolean("Recordings", false)}; //Setting Defaults and saving to preferences
+        final String[] folders = {"System", "Apps", "Documents", "Downloads", "Music", "Pictures", "Movies", "Recordings"}; //Setting the string representation for each folder
+        final boolean[] folderDefaults = {prefs.getBoolean("System", false), prefs.getBoolean("Apps", false), prefs.getBoolean("Documents", true), prefs.getBoolean("Downloads", true), prefs.getBoolean("Music", true), prefs.getBoolean("Pictures", false), prefs.getBoolean("Movies", false), prefs.getBoolean("Recordings", false)}; //Setting Defaults and saving to preferences
 
         Dialog foldersDialog;
         AlertDialog.Builder foldersBuilder = new AlertDialog.Builder(this);//Creating new
@@ -325,6 +314,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mnuFullCredits:
                 showCredits();
                 break;
+            case android.R.id.home:
+                onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
